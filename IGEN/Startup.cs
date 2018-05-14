@@ -27,6 +27,7 @@ namespace IGEN
             ConfigureAuth(app);
             CreateRoles();
             CreateAdmin();
+            CreateCreator();
         }
         
         private void CreateRoles()
@@ -37,6 +38,12 @@ namespace IGEN
                 role.Name = "Visitor";
                 roleManager.Create(role);
             }
+            if (!roleManager.RoleExists("Creator"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Creator";
+                roleManager.Create(role);
+            }
             if (!roleManager.RoleExists("Admin"))
             {
                 var role = new IdentityRole();
@@ -45,6 +52,19 @@ namespace IGEN
             }
         }
 
+        private void CreateCreator()
+        {
+            if(userManager.FindByEmail("creator@creator.com") == null)
+            {
+                var user = new ApplicationUser();
+                user.Email = "creator@creator.com";
+                user.UserName = "creator@creator.com";
+                string password = "Password1!";
+                userManager.Create(user, password);
+                userManager.SetLockoutEnabled(user.Id, false);
+                userManager.AddToRole(user.Id, "Creator");
+            }
+        }
         private void CreateAdmin()
         {
             if(userManager.FindByEmail("admin@admin.com") == null)
