@@ -31,10 +31,10 @@ namespace IGEN
         
         private void CreateRoles()
         {
-            if (!roleManager.RoleExists("Customer"))
+            if (!roleManager.RoleExists("Visitor"))
             {
                 var role = new IdentityRole();
-                role.Name = "Customer";
+                role.Name = "Visitor";
                 roleManager.Create(role);
             }
             if (!roleManager.RoleExists("Admin"))
