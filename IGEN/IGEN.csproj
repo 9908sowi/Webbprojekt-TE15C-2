@@ -197,6 +197,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ContentDbContext.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Gamedeveloper.cs" />
     <Compile Include="Models\HomeEdit.cs" />
