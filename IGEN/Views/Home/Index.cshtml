@@ -31,3 +31,9 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <input type="text" id="search" name="search" placeholder="Search..." />
+    <input type="submit" value="Search"/>
+}
