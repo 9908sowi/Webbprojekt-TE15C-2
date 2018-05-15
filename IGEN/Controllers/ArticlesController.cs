@@ -36,6 +36,7 @@ namespace IGEN.Controllers
         }
 
         // GET: Articles/Create
+        [Authorize(Roles = "Admin, Creator")]
         public ActionResult Create()
         {
             return View();
