@@ -8,6 +8,8 @@ namespace IGEN.Models
 {
     public class Game
     {
+        public int ID { get; set; }
+
         [Required(ErrorMessage = "This field is required.")]
         public string CoverArt { get; set; }
         [Required(ErrorMessage = "This field is required.")]

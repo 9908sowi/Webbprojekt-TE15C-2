@@ -8,6 +8,8 @@ namespace IGEN.Models
 {
     public class Article
     {
+        public int ID { get; set; }
+
         [Required(ErrorMessage = "This field is required.")]
         public string BigPic { get; set; }
         [Required(ErrorMessage = "This field is required.")]
