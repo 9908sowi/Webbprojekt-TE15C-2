@@ -13,14 +13,14 @@ namespace IGEN.Controllers
 {
     public class HomeController : Controller
     {
-        private ArticleDbContext db = new ArticleDbContext();
+        private ContentDbContext db = new ContentDbContext();
 
         public ActionResult Index(string search)
         {
-            var articles = db.Articles.Include(p => p.Game);
+            var articles = db.Article.Include(p => p.Game);
             if (!String.IsNullOrEmpty(search))
             {
-                articles = articles.Where(p => p.Name.Contains(search));
+                articles = articles.Where(p => p.Header.Contains(search));
             }
             return View(articles.ToList());
         }
