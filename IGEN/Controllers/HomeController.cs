@@ -1,16 +1,28 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using IGEN.Models;
 
 namespace IGEN.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private ArticleDbContext db = new ArticleDbContext();
+
+        public ActionResult Index(string search)
         {
-            return View();
+            var articles = db.Articles.Include(p => p.Game);
+            if (!String.IsNullOrEmpty(search))
+            {
+                articles = articles.Where(p => p.Name.Contains(search));
+            }
+            return View(articles.ToList());
         }
 
         public ActionResult About()
