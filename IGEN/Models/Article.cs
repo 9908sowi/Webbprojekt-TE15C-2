@@ -21,6 +21,7 @@ namespace IGEN.Models
         [Required(ErrorMessage = "This field is required.")]
         public string Text { get; set; }
         [Required(ErrorMessage = "This field is required.")]
+        public int? GameID { get; set; }
         public virtual Game Game { get; set; }
     }
 }

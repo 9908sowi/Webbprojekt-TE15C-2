@@ -17,7 +17,8 @@ namespace IGEN.Controllers
         // GET: Articles
         public ActionResult Index()
         {
-            return View(db.Article.ToList());
+            var article = db.Article.Include(a => a.Game);
+            return View(article.ToList());
         }
 
         // GET: Articles/Details/5
@@ -36,9 +37,9 @@ namespace IGEN.Controllers
         }
 
         // GET: Articles/Create
-        [Authorize(Roles = "Admin, Creator")]
         public ActionResult Create()
         {
+            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt");
             return View();
         }
 
@@ -47,7 +48,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BigPic,Header,Date,Author,Text")] Article article)
+        public ActionResult Create([Bind(Include = "ID,BigPic,Header,Date,Author,Text,GameID")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +57,7 @@ namespace IGEN.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
             return View(article);
         }
 
@@ -71,6 +73,7 @@ namespace IGEN.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
             return View(article);
         }
 
@@ -79,7 +82,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BigPic,Header,Date,Author,Text")] Article article)
+        public ActionResult Edit([Bind(Include = "ID,BigPic,Header,Date,Author,Text,GameID")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +90,7 @@ namespace IGEN.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
             return View(article);
         }
 

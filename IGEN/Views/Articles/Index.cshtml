@@ -1,4 +1,4 @@
-@model IEnumerable<IGEN.Models.Article>
+﻿@model IEnumerable<IGEN.Models.Article>
 
 @{
     ViewBag.Title = "Index";
@@ -6,15 +6,14 @@
 
 <h2>Index</h2>
 
-@if (Request.IsAuthenticated && User.IsInRole("Admin") || Request.IsAuthenticated && User.IsInRole("Creator"))
-{
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
-
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Game.CoverArt)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.BigPic)
         </th>
@@ -35,6 +34,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Game.CoverArt)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.BigPic)
         </td>
