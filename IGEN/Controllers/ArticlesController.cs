@@ -39,7 +39,7 @@ namespace IGEN.Controllers
         // GET: Articles/Create
         public ActionResult Create()
         {
-            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt");
+            ViewBag.GameID = new SelectList(db.Game, "ID", "Title");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace IGEN.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
+            ViewBag.GameID = new SelectList(db.Game, "ID", "Title", article.GameID);
             return View(article);
         }
 
@@ -73,7 +73,7 @@ namespace IGEN.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
+            ViewBag.GameID = new SelectList(db.Game, "ID", "Title", article.GameID);
             return View(article);
         }
 
@@ -90,7 +90,7 @@ namespace IGEN.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.GameID = new SelectList(db.Game, "ID", "CoverArt", article.GameID);
+            ViewBag.GameID = new SelectList(db.Game, "ID", "Title", article.GameID);
             return View(article);
         }
 
