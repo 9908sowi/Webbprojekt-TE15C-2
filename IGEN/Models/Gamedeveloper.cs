@@ -12,7 +12,6 @@ namespace IGEN.Models
 
         [Required(ErrorMessage = "This field is Required.")]
         public string Name { get; set; }
-        public  string Logo { get; set; }
-
+        public string Logo { get; set; }
     }
 }

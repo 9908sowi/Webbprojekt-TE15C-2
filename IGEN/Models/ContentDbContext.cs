@@ -10,6 +10,7 @@ namespace IGEN.Models
     {
         public DbSet<Game> Game { get; set; }
         public DbSet<Article> Article { get; set; }
+        public DbSet<HomeEdit> HomeEdit { get; set; }
         public DbSet<Gamedeveloper> Gamedeveloper { get; set; }
     }
 }

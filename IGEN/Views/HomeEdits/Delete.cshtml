@@ -1,0 +1,80 @@
+﻿@model IGEN.Models.HomeEdit
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HomeEdit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic1.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic1.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic2.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic2.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic3.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic3.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic4.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic4.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic5.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic5.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic6.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic6.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FrontPic.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FrontPic.Header)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

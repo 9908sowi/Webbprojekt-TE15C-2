@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Game.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BigPic)
+            @Html.DisplayNameFor(model => model.Game)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Header)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BigPic)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Date)
@@ -39,10 +39,10 @@
                 @Html.DisplayFor(modelItem => item.Game.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BigPic)
+                @Html.DisplayFor(modelItem => item.Header)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Header)
+                @Html.DisplayFor(modelItem => item.BigPic)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
@@ -65,5 +65,8 @@
 
 @foreach (var item in Model)
 {
-     <img src="@item.Game.CoverArt" alt="bf" />
+    if (item.ID == item.GameID)
+    {
+        <img src="@item.Game.CoverArt" alt="bf" />
+    }
 }

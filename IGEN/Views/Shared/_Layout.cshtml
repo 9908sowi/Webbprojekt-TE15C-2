@@ -5,40 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
+    <div id="container">
+        <a id="a1" href="@Url.Action("Index", "Home")"><img id="logo" src="@Url.Content("~/Content/images/IGEN_red.png")" alt="logo" /></a>
+        <a id="a2" href="@Url.Action("Index", "Home")"><p><i class="fa fa-home" aria-hidden="true"></i>Home</p></a>
+        <a id="a3" href="magazine.html"><p><i class="fa fa-book" aria-hidden="true"></i>The Magazine</p></a>
+        <a id="a33" href="#"><p>More<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
+        <a id="a4" href="#"><p><i id="topsearch" class="fa fa-search" aria-hidden="true"></i>Search</p></a>
+        <p id="a5"><a href="@Url.Action("Login", "Account")">Log in</a><br /><a href="@Url.Action("Register", "Account")">Register</a></p>
+        <i id="a6" class="fa fa-search" aria-hidden="true"></i>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <form id="searchform" action="search.html">
+        <div id="search">
+            <input type="text">
+            <input id="hiddensubmit" type="submit">
+        </div>
+    </form>
+    <div id="more">
+        <a id="m1" href="about.html"><p>About Us</p></a>
+        <a id="m2" href="contact.html"><p>Contact</p></a>
+        <a id="m3" href="press.html"><p>Press</p></a>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <!--@Html.Partial("_LoginPartial")-->
+
+    @RenderBody()
+
     @RenderSection("scripts", required: false)
+
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <script src="@Url.Content("~/Content/script.js")"></script>
 </body>
 </html>

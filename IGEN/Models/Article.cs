@@ -11,9 +11,9 @@ namespace IGEN.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
-        public string BigPic { get; set; }
-        [Required(ErrorMessage = "This field is required.")]
         public string Header { get; set; }
+        [Required(ErrorMessage = "This field is required.")]
+        public string BigPic { get; set; }
         [Required(ErrorMessage = "This field is required.")]
         public DateTime Date { get; set; }
         [Required(ErrorMessage = "This field is required.")]
@@ -23,5 +23,6 @@ namespace IGEN.Models
         [Required(ErrorMessage = "This field is required.")]
         public int? GameID { get; set; }
         public virtual Game Game { get; set; }
+        public virtual ICollection<HomeEdit> HomeEdits { get; set; }
     }
 }

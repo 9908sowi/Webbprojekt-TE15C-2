@@ -193,6 +193,7 @@
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeEditsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,6 +214,14 @@
     <Compile Include="Migrations\201805161358248_Migrationsverket.Designer.cs">
       <DependentUpon>201805161358248_Migrationsverket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805161554140_HomeEditMigration.cs" />
+    <Compile Include="Migrations\201805161554140_HomeEditMigration.Designer.cs">
+      <DependentUpon>201805161554140_HomeEditMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805161612158_HomeEditMigration2.cs" />
+    <Compile Include="Migrations\201805161612158_HomeEditMigration2.Designer.cs">
+      <DependentUpon>201805161612158_HomeEditMigration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -226,8 +235,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\Banner_AD_1.png" />
     <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\IGEN.png" />
@@ -237,12 +244,11 @@
     <Content Include="Content\images\magazine.png" />
     <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\youtube.png" />
+    <Content Include="Content\script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -301,6 +307,11 @@
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\HomeEdits\Create.cshtml" />
+    <Content Include="Views\HomeEdits\Delete.cshtml" />
+    <Content Include="Views\HomeEdits\Details.cshtml" />
+    <Content Include="Views\HomeEdits\Edit.cshtml" />
+    <Content Include="Views\HomeEdits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,6 +341,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805161358248_Migrationsverket.resx">
       <DependentUpon>201805161358248_Migrationsverket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805161554140_HomeEditMigration.resx">
+      <DependentUpon>201805161554140_HomeEditMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805161612158_HomeEditMigration2.resx">
+      <DependentUpon>201805161612158_HomeEditMigration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

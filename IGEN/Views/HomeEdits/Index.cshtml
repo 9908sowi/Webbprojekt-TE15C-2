@@ -1,0 +1,68 @@
+﻿@model IEnumerable<IGEN.Models.HomeEdit>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardPic6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FrontPic)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic1.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic2.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic3.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic4.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic5.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardPic6.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrontPic.Header)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+@foreach (var item in Model)
+{
+    <img src="@item.CardPic1.Game.CoverArt" alt="bf" />
+}

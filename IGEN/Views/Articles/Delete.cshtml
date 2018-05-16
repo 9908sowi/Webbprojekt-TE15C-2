@@ -12,19 +12,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Game.CoverArt)
+            @Html.DisplayNameFor(model => model.Game.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Game.CoverArt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BigPic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BigPic)
+            @Html.DisplayFor(model => model.Game.Title)
         </dd>
 
         <dt>
@@ -33,6 +25,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BigPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BigPic)
         </dd>
 
         <dt>

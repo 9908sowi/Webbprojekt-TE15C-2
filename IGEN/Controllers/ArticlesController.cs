@@ -15,9 +15,13 @@ namespace IGEN.Controllers
         private ContentDbContext db = new ContentDbContext();
 
         // GET: Articles
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             var article = db.Article.Include(a => a.Game);
+            if (!String.IsNullOrEmpty(search))
+            {
+                article = article.Where(a => a.Header.Contains(search));
+            }
             return View(article.ToList());
         }
 
@@ -48,7 +52,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BigPic,Header,Date,Author,Text,GameID")] Article article)
+        public ActionResult Create([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +86,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BigPic,Header,Date,Author,Text,GameID")] Article article)
+        public ActionResult Edit([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID")] Article article)
         {
             if (ModelState.IsValid)
             {

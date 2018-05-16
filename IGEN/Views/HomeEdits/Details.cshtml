@@ -1,0 +1,74 @@
+﻿@model IGEN.Models.HomeEdit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HomeEdit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic1.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic1.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic2.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic2.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic3.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic3.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic4.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic4.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic5.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic5.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardPic6.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardPic6.Header)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FrontPic.Header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FrontPic.Header)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

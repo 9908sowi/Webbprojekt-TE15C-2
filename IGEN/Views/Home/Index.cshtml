@@ -1,39 +1,92 @@
-﻿
+﻿@model IEnumerable<IGEN.Models.Article>
 
-@{
-    ViewBag.Title = "IGEN";
-}
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="content">
+    <a id="mainpic" href="article.html"><img id="pic1" src="https://cdn.mos.cms.futurecdn.net/eZ6pqBFQtymNTiksWQCJWo-650-80.jpg" alt="main headline" /></a>
+    <h1 id="head1"><a href="article.html">The return of Battlefield in 2018</a></h1>
+    <h1 id="mostread">Most read</h1>
+    <a class="sidepic1" href="article.html"><hr id="hr1"><img class="sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead1"><a class="sidehead1" href="article.html">Fortnite is the most played game right now</a></h1>
+    <a class="sidepic2" href="article.html"><img class="sidepic2" src="https://cdn.mos.cms.futurecdn.net/L2mvXrVt3psHHM7fM2LWaD-650-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead2"><a class="sidehead2" href="article.html">The GTX 1060 is only $199 for a limited time</a></h1>
+    <a class="sidepic3" href="article.html"><img class="sidepic3" src="https://cdn.mos.cms.futurecdn.net/mW35CbYGMypUDBpG3dcJgU-320-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead3"><a class="sidehead3" href="article.html">Radical Heights is the hottest new battle royale</a></h1>
+    <a id="showmore"><p>Show more<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
+</div>
+<div id="showmorecontent">
+    <img class="showmorepic1 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead1">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <a href="article.html"><div id="mostreadbg4"></div></a>
+    <a href="article.html"><div id="mostreadbg5"></div></a>
+    <a href="article.html"><div id="mostreadbg6"></div></a>
+    <a href="article.html"><div id="mostreadbg7"></div></a>
+    <a href="article.html"><div id="mostreadbg8"></div></a>
+</div>
+<p id="showless">Show less <i class="fa fa-angle-double-up" aria-hidden="true"></i></p>
+<hr id="cutmain">
+<div id="cards">
+    <a id="cpa1" href="article.html"><img id="cardpic1" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="cha1" href="article.html"><h1 id="cardheader1">How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="cpa2" href="article.html"><img id="cardpic2" src="https://cdn.mos.cms.futurecdn.net/CKJ7Hr2SNqSS2qzQXVWXqk-970-80.jpg" alt="card" /></a>
+    <a id="cha2" href="article.html"><h1 id="cardheader2">Why Spy Party is the perfect party game</h1></a>
+    <a id="cpa3" href="article.html"><img id="cardpic3" src="https://cdn.mos.cms.futurecdn.net/UdhMEZXfn7QfQRY3bmuVmT-320-80.jpg" alt="card" /></a>
+    <a id="cha3" href="article.html"><h1 id="cardheader3">The best SSDs</h1></a>
+    <a id="cpa4" href="article.html"><img id="cardpic4" src="https://cdn.mos.cms.futurecdn.net/rQrNs6CKLRCrHLEQSkWLPf-320-80.jpg" alt="card" /></a>
+    <a id="cha4" href="article.html"><h1 id="cardheader4">The best mech games</h1></a>
+    <a id="cpa5" href="article.html"><img id="cardpic5" src="https://cdn.mos.cms.futurecdn.net/zfxJRd7DvVzzArJBjZu9KK-320-80.jpg" alt="card" /></a>
+    <a id="cha5" href="article.html"><h1 id="cardheader5">Becoming pro at Overwatch</h1></a>
+    <a id="cpa6" href="article.html"><img id="cardpic6" src="https://cdn.mos.cms.futurecdn.net/FFkcencjSbfBahaoCDxDvn-320-80.gif" alt="card" /></a>
+    <a id="cha6" href="article.html"><h1 id="cardheader6">The indie games of 2018</h1></a>
+</div>
+<h1 id="justposted">Just posted</h1>
+<hr id="cutcards">
+<div id="recent">
+    <div id="vr"></div>
+    <a id="rpa1" href="article.html"><img id="recentpic1" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha1" href="article.html"><h1 id="recentheader1"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="rpa2" href="article.html"><img id="recentpic2" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha2" href="article.html"><h1 id="recentheader2"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="rpa3" href="article.html"><img id="recentpic3" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha3" href="article.html"><h1 id="recentheader3"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="rpa4" href="article.html"><img id="recentpic4" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha4" href="article.html"><h1 id="recentheader4"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="rpa5" href="article.html"><img id="recentpic5" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha5" href="article.html"><h1 id="recentheader5"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+    <a id="rpa6" href="article.html"><img id="recentpic6" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+    <a id="rha6" href="article.html"><h1 id="recentheader6"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+</div>
+<div id="socialmedia">
+    <p>Visit us on social media</p>
+    <a id="spa1" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="index.html">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<div id="mostreadbg1"></div>
+<div id="mostreadbg2"></div>
+<div id="mostreadbg3"></div>
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+@using (Html.BeginForm("Index", "Articles", FormMethod.Get))
 {
     <input type="text" id="search" name="search" placeholder="Search..." />
-    <input type="submit" value="Search"/>
+    <input type="submit" value="Search" />
 }
