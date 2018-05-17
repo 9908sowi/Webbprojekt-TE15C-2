@@ -21,7 +21,7 @@
     @Html.ActionLink("Delete", "Delete", new { id = item.ID })
 }
 
-<p id="topsearchtext">Search results for ""</p>
+<p id="topsearchtext">Search results for "@ViewBag.SearchText"</p>
 <a class="srpa1" id="rpa1" href="article.html"><img class="srecentpic1" id="recentpic1" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
 <a class="srha1" id="rha1" href="article.html"><h1 class="srecentheader1" id="recentheader1"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
 <a class="srpa2" id="rpa2" href="article.html"><img class="srecentpic2" id="recentpic2" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
@@ -33,7 +33,7 @@
     <option value="new">New</option>
     <option value="popular">Popular</option>
 </select>
-<a href="https://fortnitetutorials.com"><img id="fortnitetutorials" src="images/Banner_AD_1.png" alt="fortnitetutorials" /></a>
+<a href="https://fortnitetutorials.com"><img id="fortnitetutorials" src="@Url.Content("~/Content/images/Banner_AD_1.png")" alt="fortnitetutorials" /></a>
 <hr id="articlehr-login">
 <div id="socialmedia-login">
     <p>Visit us on social media</p>

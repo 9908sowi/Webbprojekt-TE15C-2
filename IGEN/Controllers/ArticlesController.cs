@@ -22,6 +22,7 @@ namespace IGEN.Controllers
             {
                 article = article.Where(a => a.Header.Contains(search));
             }
+            ViewBag.SearchText = search;
             return View(article.ToList());
         }
 
