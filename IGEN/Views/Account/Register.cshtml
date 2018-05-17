@@ -1,39 +1,36 @@
-﻿@model IGEN.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
+﻿<h1 id="logintop">Register an account</h1>
+<hr id="logintophr">
+<i id="loginicon" class="fa fa-sign-in" aria-hidden="true"></i>
+<p id="registertext">Already registered?<br /><a href="login.html">Log in here.</a></p>
+<p id="forgotpasswordtext">Not subscribed?<br /><a href="magazine.html">Subscribe here.</a></p>
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "Home")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
+</div>
 
-<h2>@ViewBag.Title.</h2>
+@model IGEN.Models.RegisterViewModel
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "loginform", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
+    @Html.ValidationSummary("")
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email, new { id = "email" })
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password, new { id = "password" })
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword, new { id = "password" })
+    <input id="submit" type="submit" value="Register      " />
 }
 
 @section Scripts {
