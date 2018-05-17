@@ -1054,6 +1054,23 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     font-family:"Archivo Narrow", sans-serif;
 }
 
-#createnewarticle {
-    color:#000000:
+#createnewarticle a {
+    color: #DC143C;
+    position: absolute;
+    left: calc((100vw - 960px) / 2 + 820px);
+    top:85px;
+    font-size:16px;
+}
+
+#createnewarticle a:nth-child(2) {
+    top:100px;
+}
+
+#createnewarticle a:nth-child(3) {
+    top:115px;
+}
+
+#createnewarticle a:hover {
+    background-color:initial;
+    text-decoration:underline;
 }

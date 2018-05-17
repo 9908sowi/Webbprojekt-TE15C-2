@@ -1,12 +1,5 @@
 ﻿@model IEnumerable<IGEN.Models.Article>
 
-@if (Request.IsAuthenticated && User.IsInRole("Admin") || Request.IsAuthenticated && User.IsInRole("Creator"))
-{
-    <p id="createnewarticle">
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
-
 @{ var count = 1; }
 
 @foreach (var item in Model)
@@ -19,7 +12,14 @@
     string srecentpic = "srecentpic" + count.ToString();
     string recentheader = "recentheader" + count.ToString();
     string srecentheader = "srecentheader" + count.ToString();
-    <p id="topsearchtext">Search results for "@ViewBag.SearchText"</p>
+    if (ViewBag.SearchText == "")
+    {
+        <p id="topsearchtext">Showing all articles</p>
+    }
+    else
+    {
+        <p id="topsearchtext">Search results for "@ViewBag.SearchText"</p>
+    }
     <a class="@srpa" id="@rpa" href="@Url.Action("Details", "Articles", new { id = item.ID })"><img class="@srecentpic" id="@recentpic" src="@item.BigPic" alt="card" /></a>
     <a class="@srha" id="@rha" href="@Url.Action("Details", "Articles", new { id = item.ID })"><h1 class="@srecentheader" id="@recentheader"><span class="date">@Html.DisplayFor(modelItem => item.Date)</span><br />@Html.DisplayFor(modelItem => item.Header)</h1></a>
 

@@ -17,9 +17,10 @@
         <a id="a3" href="magazine.html"><p><i class="fa fa-book" aria-hidden="true"></i>The Magazine</p></a>
         <a id="a33" href="#"><p>More<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
         <a id="a4" href="#"><p><i id="topsearch" class="fa fa-search" aria-hidden="true"></i>Search</p></a>
-        @if (!Request.IsAuthenticated){<p id="a5"><a href="@Url.Action("Login", "Account")">Log in</a><br /><a href="@Url.Action("Register", "Account")">Register</a></p>}
+        @if (!Request.IsAuthenticated)
+        {<p id="a5"><a href="@Url.Action("Login", "Account")">Log in</a><br /><a href="@Url.Action("Register", "Account")">Register</a></p>}
         <i id="a6" class="fa fa-search" aria-hidden="true"></i>
-        </div>
+    </div>
     @using (Html.BeginForm("Index", "Articles", FormMethod.Get, new { id = "searchform" }))
     {
         <div id="search">
@@ -34,6 +35,18 @@
     </div>
 
     @Html.Partial("_LoginPartial")
+
+    @if (Request.IsAuthenticated && User.IsInRole("Admin") || Request.IsAuthenticated && User.IsInRole("Creator"))
+    {
+        <p id="createnewarticle">
+            @Html.ActionLink("New article", "Create", "Articles")
+            @Html.ActionLink("Show/edit articles", "Index", "Articles")
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit homepage", "Index", "HomeEdits")
+            }
+        </p>
+    }
 
     @RenderBody()
 
