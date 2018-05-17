@@ -244,6 +244,7 @@
     <Content Include="Content\images\magazine.png" />
     <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\youtube.png" />
+    <Content Include="Content\MobileSite.js" />
     <Content Include="Content\script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
