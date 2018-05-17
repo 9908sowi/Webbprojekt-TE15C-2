@@ -1,68 +1,97 @@
 ﻿@model IEnumerable<IGEN.Models.HomeEdit>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CardPic6)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FrontPic)
-        </th>
-        <th></th>
-    </tr>
-
+<div id="content">
+    @foreach (var item in Model) {<a id="mainpic" href="@Url.Action("Details", "Articles", new { id = item.FrontPic.ID })"><img id="pic1" src="@item.FrontPic.BigPic" alt="main headline" /></a>
+    <h1 id="head1"><a href="article.html">@Html.DisplayFor(modelItem => item.FrontPic.Header)</a></h1>}
+    <h1 id="mostread">Most read</h1>
+    <a class="sidepic1" href="article.html"><hr id="hr1"><img class="sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead1"><a class="sidehead1" href="article.html">Fortnite is the most played game right now</a></h1>
+    <a class="sidepic2" href="article.html"><img class="sidepic2" src="https://cdn.mos.cms.futurecdn.net/L2mvXrVt3psHHM7fM2LWaD-650-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead2"><a class="sidehead2" href="article.html">The GTX 1060 is only $199 for a limited time</a></h1>
+    <a class="sidepic3" href="article.html"><img class="sidepic3" src="https://cdn.mos.cms.futurecdn.net/mW35CbYGMypUDBpG3dcJgU-320-80.jpg" alt="most read 1" /><hr></a>
+    <h1 class="sidehead3"><a class="sidehead3" href="article.html">Radical Heights is the hottest new battle royale</a></h1>
+    <a id="showmore"><p>Show more<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
+</div>
+<div id="showmorecontent">
+    <img class="showmorepic1 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead1">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
+    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
+    <hr>
+    <a href="article.html"><div id="mostreadbg4"></div></a>
+    <a href="article.html"><div id="mostreadbg5"></div></a>
+    <a href="article.html"><div id="mostreadbg6"></div></a>
+    <a href="article.html"><div id="mostreadbg7"></div></a>
+    <a href="article.html"><div id="mostreadbg8"></div></a>
+</div>
+<p id="showless">Show less <i class="fa fa-angle-double-up" aria-hidden="true"></i></p>
+<hr id="cutmain">
+<div id="cards">
+    @foreach (var item in Model) {<a id="cpa1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><img id="cardpic1" src="@item.CardPic1.BigPic" alt="card" /></a>
+    <a id="cha1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><h1 id="cardheader1">@Html.DisplayFor(modelItem => item.CardPic1.Header)</h1></a>}
+    @foreach (var item in Model) {<a id="cpa2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><img id="cardpic2" src="@item.CardPic2.BigPic" alt="card" /></a>
+    <a id="cha2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><h1 id="cardheader2">@Html.DisplayFor(modelItem => item.CardPic2.Header)</h1></a>}
+    @foreach (var item in Model) {<a id="cpa3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><img id="cardpic3" src="@item.CardPic3.BigPic" alt="card" /></a>
+    <a id="cha3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><h1 id="cardheader3">@Html.DisplayFor(modelItem => item.CardPic3.Header)</h1></a>}
+    @foreach (var item in Model) {<a id="cpa4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><img id="cardpic4" src="@item.CardPic4.BigPic" alt="card" /></a>
+    <a id="cha4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><h1 id="cardheader4">@Html.DisplayFor(modelItem => item.CardPic4.Header)</h1></a>}
+    @foreach (var item in Model) {<a id="cpa5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><img id="cardpic5" src="@item.CardPic5.BigPic" alt="card" /></a>
+    <a id="cha5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><h1 id="cardheader5">@Html.DisplayFor(modelItem => item.CardPic5.Header)</h1></a>}
+    @foreach (var item in Model) {<a id="cpa6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><img id="cardpic6" src="@item.CardPic6.BigPic" alt="card" /></a>
+    <a id="cha6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><h1 id="cardheader6">@Html.DisplayFor(modelItem => item.CardPic6.Header)</h1></a>}
+</div>
+<h1 id="justposted">Just posted</h1>
+<hr id="cutcards">
+<div id="recent">
+    <div id="vr"></div>
+    @{
+        var maxID = ViewData["LatestArticle"];
+        var count = 1;
+    }
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic1.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic2.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic3.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic4.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic5.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardPic6.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FrontPic.Header)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
+        string rpa = "rpa" + count.ToString();
+        string rha = "rha" + count.ToString();
+        string recentpic = "recentpic" + count.ToString();
+        string recentheader = "recentheader" + count.ToString();
 
-</table>
-@foreach (var item in Model)
-{
-    <img src="@item.CardPic1.Game.CoverArt" alt="bf" />
-}
+        <a id="@rpa" href="article.html"><img id="@recentpic" src="@item.CardPic1.BigPic" alt="card" /></a>
+        <a id="@rha" href="article.html"><h1 id="@recentheader"><span class="date">@maxID</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+
+        if (count >= 6)
+        {
+            break;
+        }
+        else
+        {
+            count = count + 1;
+        }
+    }
+    </div>
+<div id="socialmedia">
+    <p>Visit us on social media</p>
+    <a id="spa1" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
+</div>
+
+<div id="mostreadbg1"></div>
+<div id="mostreadbg2"></div>
+<div id="mostreadbg3"></div>

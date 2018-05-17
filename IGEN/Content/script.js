@@ -127,11 +127,11 @@ $(document).ready(function() {
 
   $("#followdeveloper").click(function() {
     $("#follownotification").delay(100).animate({
-      top:"1150px"
+      top:"1200px"
     }, 600).delay(5000);
 
     $("#follownotification").animate({
-      top:"1080px"
+      top:"1130px"
     }, 600);
   });
 

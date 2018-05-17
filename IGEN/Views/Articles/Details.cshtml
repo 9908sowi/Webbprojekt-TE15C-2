@@ -1,66 +1,37 @@
 ﻿@model IGEN.Models.Article
 
 @{
-    ViewBag.Title = "Details";
+    var BigPic = Model.BigPic;
+    var CoverArt = Model.Game.CoverArt;
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Article</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Game.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Game.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Header)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Header)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BigPic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BigPic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-    </dl>
+<p id="follownotification"><i class="fa fa-check"></i>You are now following this developer!</p>
+<img id="articlepic" src="@BigPic" alt="bigpic" />
+<h1 id="articleheader">@Html.DisplayFor(model => model.Header)<br /><span id="articledate">@Html.DisplayFor(model => model.Date)</span></h1>
+<p id="articletext">By <a href="#"><span id="writer">@Html.DisplayFor(model => model.Author)</span></a><br /><br />@Html.DisplayFor(model => model.Text)</p>
+<hr id="articlehr">
+<div id="game">
+    <div id="gamebg"></div>
+    <img id="gamepic" src="@CoverArt" alt="gamecover" />
+    <p id="gametitle">Title: <span class="bold">@Html.DisplayFor(model => model.Game.Title)</span></p>
+    <p id="gamedeveloper">Developer: <span class="bold">@Html.DisplayFor(model => model.Game.Developer)</span></p>
+    <p id="followdeveloper"><a>Follow this developer</a></p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div id="socialmedia">
+    <p>Visit us on social media</p>
+    <a id="spa1" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
+</div>
+
+@if (Request.IsAuthenticated && User.IsInRole("Admin") || Request.IsAuthenticated && User.IsInRole("Creator"))
+{
+    <p id="editarticle">@Html.ActionLink("Edit article", "Edit", new { id = Model.ID })</p>
+}

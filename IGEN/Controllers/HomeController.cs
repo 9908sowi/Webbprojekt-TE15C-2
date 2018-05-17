@@ -15,29 +15,19 @@ namespace IGEN.Controllers
     {
         private ContentDbContext db = new ContentDbContext();
 
-        public ActionResult Index(string search)
+        public ActionResult Index()
         {
-            var articles = db.Article.Include(p => p.Game);
-            if (!String.IsNullOrEmpty(search))
-            {
-                articles = articles.Where(p => p.Header.Contains(search));
-            }
-            return View(articles.ToList());
+            return RedirectToAction("Index", "HomeEdits");
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return RedirectToAction("About", "HomeEdits");
         }
 
-        [Authorize]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return RedirectToAction("Contact", "HomeEdits");
         }
     }
 }

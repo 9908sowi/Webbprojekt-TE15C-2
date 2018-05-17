@@ -347,10 +347,8 @@ hr {
     width: 260px;
     background-color: #000000;
     padding: 10px;
-}
-
-#cardheader3, #cardheader4, #cardheader5, #cardheader6 {
-    padding-bottom: 37px;
+    position: absolute;
+    height:54px;
 }
 
 #justposted {
@@ -606,7 +604,7 @@ hr {
 
 #gamebg {
     background-color: #D1D1D1;
-    height: 150px;
+    height: 200px;
     top: 245px;
     left: 0;
 }
@@ -639,7 +637,7 @@ hr {
 #followdeveloper {
     position: absolute;
     font-family: "Open Sans", sans-serif;
-    top: 300px;
+    top: 350px;
     left: -6px;
     font-size: 18px;
     width: 146px;
@@ -963,7 +961,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 #follownotification {
     position: absolute;
     left: calc((100vw - 960px) / 2 + 625px);
-    top: 1080px;
+    top: 1130px;
     width: 160px;
     background-color: #ACFF8C;
     padding: 10px;
@@ -1073,4 +1071,24 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 #createnewarticle a:hover {
     background-color:initial;
     text-decoration:underline;
+}
+
+#editarticle {
+    position:absolute;
+    left: calc((100vw - 960px) / 2 + 25px);
+    top:90px;
+}
+
+#editarticle a {
+    color:#DC143C;
+}
+
+#editarticle a:hover {
+    background-color:initial;
+    text-decoration:underline;
+}
+
+.editform {
+    width:400px;
+    background-color:green;
 }

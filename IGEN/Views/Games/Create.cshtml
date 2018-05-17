@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CoverArt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CoverArt, new { htmlAttributes = new { @class = "form-control", placeholder = "Must be link to a picture" } })
+                @Html.EditorFor(model => model.CoverArt, new { htmlAttributes = new { @class = "form-control", placeholder = "7:5, link to picture." } })
                 @Html.ValidationMessageFor(model => model.CoverArt, "", new { @class = "text-danger" })
             </div>
         </div>

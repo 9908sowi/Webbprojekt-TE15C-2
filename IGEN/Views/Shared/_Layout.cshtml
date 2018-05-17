@@ -12,8 +12,8 @@
 </head>
 <body>
     <div id="container">
-        <a id="a1" href="@Url.Action("Index", "Home")"><img id="logo" src="@Url.Content("~/Content/images/IGEN_red.png")" alt="logo" /></a>
-        <a id="a2" href="@Url.Action("Index", "Home")"><p><i class="fa fa-home" aria-hidden="true"></i>Home</p></a>
+        <a id="a1" href="@Url.Action("Index", "HomeEdits")"><img id="logo" src="@Url.Content("~/Content/images/IGEN_red.png")" alt="logo" /></a>
+        <a id="a2" href="@Url.Action("Index", "HomeEdits")"><p><i class="fa fa-home" aria-hidden="true"></i>Home</p></a>
         <a id="a3" href="magazine.html"><p><i class="fa fa-book" aria-hidden="true"></i>The Magazine</p></a>
         <a id="a33" href="#"><p>More<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
         <a id="a4" href="#"><p><i id="topsearch" class="fa fa-search" aria-hidden="true"></i>Search</p></a>
@@ -43,7 +43,7 @@
             @Html.ActionLink("Show/edit articles", "Index", "Articles")
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
-                @Html.ActionLink("Edit homepage", "Index", "HomeEdits")
+                @Html.ActionLink("Edit homepage", "Edit/1", "HomeEdits")
             }
         </p>
     }
