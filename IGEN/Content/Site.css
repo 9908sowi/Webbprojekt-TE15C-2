@@ -1044,3 +1044,12 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 #mostreadbg8 {
     top: 310px;
 }
+
+.logininfoform {
+    width:150px;
+    color:#FFFFFF;
+    position: absolute;
+    left: calc((100vw - 960px) / 2 + 820px);
+    top:6px;
+    font-family:"Archivo Narrow", sans-serif;
+}
