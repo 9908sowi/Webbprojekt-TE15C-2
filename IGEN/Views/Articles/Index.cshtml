@@ -1,72 +1,50 @@
 ﻿@model IEnumerable<IGEN.Models.Article>
 
-@{
-    ViewBag.Title = "Index";
+@if (Request.IsAuthenticated && User.IsInRole("Admin") || Request.IsAuthenticated && User.IsInRole("Creator"))
+{
+    <p id="createnewarticle">
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Game)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Header)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BigPic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Game.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BigPic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
-
-</table>
 
 @foreach (var item in Model)
 {
-    if (item.ID == item.GameID)
-    {
-        <img src="@item.Game.CoverArt" alt="bf" />
-    }
+    @Html.DisplayFor(modelItem => item.Header)
+    <img src="@item.BigPic" alt="bf" />
+    @Html.DisplayFor(modelItem => item.Date)
+
+    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+    <br />
+    @Html.ActionLink("Details", "Details", new { id = item.ID })
+    <br />
+    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
 }
+
+<p id="topsearchtext">Search results for ""</p>
+<a class="srpa1" id="rpa1" href="article.html"><img class="srecentpic1" id="recentpic1" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+<a class="srha1" id="rha1" href="article.html"><h1 class="srecentheader1" id="recentheader1"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+<a class="srpa2" id="rpa2" href="article.html"><img class="srecentpic2" id="recentpic2" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+<a class="srha2" id="rha2" href="article.html"><h1 class="srecentheader2" id="recentheader2"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+<a class="srpa3" id="rpa3" href="article.html"><img class="srecentpic3" id="recentpic3" src="https://cdn.mos.cms.futurecdn.net/MHeMAFuHTM6n5SmksXdF4P-320-80.jpg" alt="card" /></a>
+<a class="srha3" id="rha3" href="article.html"><h1 class="srecentheader3" id="recentheader3"><span class="date">HH:MM - DDth M</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
+<select id="sortby" name="cars">
+    <option value="sortby">Sort by</option>
+    <option value="new">New</option>
+    <option value="popular">Popular</option>
+</select>
+<a href="https://fortnitetutorials.com"><img id="fortnitetutorials" src="images/Banner_AD_1.png" alt="fortnitetutorials" /></a>
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "Home")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
+</div>
