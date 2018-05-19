@@ -1,78 +1,61 @@
 ﻿@model IGEN.Models.Article
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "| Create article";
 }
 
-<h2>Create</h2>
+<h2 id="topcreate">Create article</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Article</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Header, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Header, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Header, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BigPic, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BigPic, new { htmlAttributes = new { @class = "form-control", placeholder = "16:9, link to picture." } })
-                @Html.ValidationMessageFor(model => model.BigPic, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Format YYYY/MM/DD HH:MM" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GameID, "GameID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GameID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+    <hr id="createtophr"/>
+    @Html.ValidationSummary(true, "")
+    @Html.LabelFor(model => model.Header, new { id = "create-header-label" })
+    @Html.EditorFor(model => model.Header, new { htmlAttributes = new { id = "create-header" } })
+    @Html.ValidationMessageFor(model => model.Header, "", new { id = "create-header-val" })
+    <br />
+    @Html.LabelFor(model => model.BigPic, new { id = "create-bigpic-label" })
+    @Html.EditorFor(model => model.BigPic, new { htmlAttributes = new { placeholder = "Must be LINK to picture. Preferred 16:9 format.", id = "create-bigpic" } })
+    @Html.ValidationMessageFor(model => model.BigPic, "", new { id = "create-bigpic-val" })
+    <br />
+    @Html.LabelFor(model => model.Date, new { id = "create-date-label" })
+    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { placeholder = "YYYY/MM/DD HH:MM", id = "create-date" } })
+    @Html.ValidationMessageFor(model => model.Date, "", new { id = "create-date-val" })
+    <br />
+    @Html.LabelFor(model => model.Author, new { id = "create-author-label" })
+    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { id = "create-author" } })
+    @Html.ValidationMessageFor(model => model.Author, "", new { id = "create-author-val" })
+    <br />
+    @Html.LabelFor(model => model.Text, new { id = "create-text-label" })
+    @Html.EditorFor(model => model.Text, new { htmlAttributes = new { id = "create-text" } })
+    @Html.ValidationMessageFor(model => model.Text, "", new { id = "create-text-val" })
+    <br />
+    @Html.LabelFor(model => model.GameID, "Game", new { id = "create-game-label" })
+    @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control", id = "create-game" })
+    @Html.ValidationMessageFor(model => model.GameID, "", new { id = "create-game-val" })
+    <br />
+    <input id="submit" class="submit-create" type="submit" value="Create" />
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Show full List", "Index")
+</div>
+
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
 </div>
 
 @section Scripts {

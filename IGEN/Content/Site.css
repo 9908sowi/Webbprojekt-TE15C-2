@@ -745,7 +745,7 @@ hr {
     top: 155px;
 }
 
-#logintophr {
+#logintophr, #createtophr {
     position: absolute;
     left: calc((100vw - 960px) / 2 + 200px);
     top: 225px;
@@ -1125,4 +1125,101 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 #loginfail-email-first {
     top:210px;
     left:275px;
+}
+
+#create-header, #create-bigpic, #create-date, #create-author, #create-text, #create-game {
+    position: absolute;
+    font-family: "Archivo Narrow", sans-serif;
+    left: calc((100vw - 960px) / 2 + 380px);
+    height:25px;
+    width:300px;
+}
+
+#create-header-label, #create-bigpic-label, #create-date-label, #create-author-label, #create-text-label, #create-game-label {
+    position: absolute;
+    font-family: "Archivo Narrow", sans-serif;
+    left: calc((100vw - 960px) / 2 + 300px);
+    font-size:25px;
+}
+
+#create-header, #create-header-label, #create-header-val {
+    top: 200px;
+}
+
+#create-bigpic, #create-bigpic-label, #create-bigpic-val {
+    top: 250px;
+}
+
+#create-bigpic-label {
+    left: calc((100vw - 960px) / 2 + 307px);
+}
+
+#create-date, #create-date-label, #create-date-val {
+    top: 300px;
+}
+
+#create-date-label {
+    left: calc((100vw - 960px) / 2 + 321px);
+}
+
+#create-author, #create-author-label, #create-author-val {
+    top: 350px;
+}
+
+#create-author-label {
+    left: calc((100vw - 960px) / 2 + 306px);
+}
+
+#create-author-label {
+    top:349px;
+}
+
+#create-text, #create-text-label, #create-text-val {
+    top: 400px;
+}
+
+#create-text-label {
+    left: calc((100vw - 960px) / 2 + 327px);
+}
+
+#create-text {
+    height: 100px;
+}
+
+#create-game, #create-game-label, #create-game-val {
+    top: 530px;
+}
+
+#create-game-label {
+    left: calc((100vw - 960px) / 2 + 311px);
+}
+
+#create-game-label {
+    top:525px;
+}
+
+#topcreate {
+    position: absolute;
+    left: calc((100vw - 960px) / 2 + 235px);
+    top:130px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 35px;
+}
+
+#createtophr {
+    top:180px;
+}
+
+.submit-create {
+    width: 100px !important;
+    position: absolute;
+    top: 540px;
+    left: calc((100vw - 960px) / 2 + 380px);
+}
+
+#create-header-val, #create-bigpic-val, #create-date-val, #create-author-val, #create-text-val, #create-game-val {
+    font-family: "Archivo Narrow", sans-serif;
+    color: red;
+    position:absolute;
+    left: calc((100vw - 960px) / 2 + 690px);
 }
