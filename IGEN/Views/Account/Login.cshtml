@@ -1,14 +1,10 @@
 ﻿@using IGEN.Models
 @model LoginViewModel
 
+@{ ViewBag.Title = "| Login"; }
+
 <h1 id="logintop">Log in to IGEN</h1>
 <hr id="logintophr">
-<form id="loginform">
-    <label for="email">Email: </label>
-    <input id="email" type="email" required />
-    <label for="password">Password: </label>
-    <input id="password" type="text" required />
-</form>
 <i id="loginicon" class="fa fa-sign-in" aria-hidden="true"></i>
 <p id="registertext">No account?<br /><a href="@Url.Action("Register", "Account")">Register here.</a></p>
 <p id="forgotpasswordtext">Forgot your password?<br /><a href="@Url.Action("ResetPassword", "Account")">Recover password here.</a></p>
@@ -31,13 +27,13 @@
     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginform", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true, "")
+        @Html.ValidationSummary(true, "", new { id = "loginfail-email-first" })
         @Html.LabelFor(m => m.Email)
         @Html.TextBoxFor(m => m.Email, new { id = "email" })
-        @Html.ValidationMessageFor(m => m.Email, "")
+        @Html.ValidationMessageFor(m => m.Email, "", new { id = "loginfail-email" })
         @Html.LabelFor(m => m.Password)
         @Html.PasswordFor(m => m.Password, new { id = "password" })
-        @Html.ValidationMessageFor(m => m.Password, "")
+        @Html.ValidationMessageFor(m => m.Password, "", new { id = "loginfail-password" })
         @Html.CheckBoxFor(m => m.RememberMe)
         @Html.LabelFor(m => m.RememberMe)
 

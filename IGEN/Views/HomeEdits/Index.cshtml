@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<IGEN.Models.HomeEdit>
 
+@{ ViewBag.Title = "| Home"; }
+
 <div id="content">
     @foreach (var item in Model)
     {<a id="mainpic" href="@Url.Action("Details", "Articles", new { id = item.FrontPic.ID })"><img id="pic1" src="@item.FrontPic.BigPic" alt="main headline" /></a>

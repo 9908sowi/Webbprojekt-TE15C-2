@@ -23,7 +23,7 @@
         <p id="topsearchtext">Search results for "@ViewBag.SearchText"</p>
     }
     <a class="@srpa" id="@rpa" href="@Url.Action("Details", "Articles", new { id = item.ID })"><img class="@srecentpic" id="@recentpic" src="@item.BigPic" alt="card" /></a>
-    <a class="@srha" id="@rha" href="@Url.Action("Details", "Articles", new { id = item.ID })"><h1 class="@srecentheader" id="@recentheader"><span class="date">@Html.DisplayFor(modelItem => item.Date)</span><br />@Html.DisplayFor(modelItem => item.Header)</h1></a>
+    <a class="@srha" id="@rha" href="@Url.Action("Details", "Articles", new { id = item.ID })"><h1 class="@srecentheader" id="@recentheader"><span class="date">@item.Date.Hour:@item.Date.Minute  -  @item.Date.Day/@item.Date.Month</span><br />@Html.DisplayFor(modelItem => item.Header)</h1></a>
 
     <!--<a class="srpa2" id="rpa2" href="article.html"><img class="srecentpic2" id="recentpic2" src="@item.BigPic" alt="card" /></a>
     <a class="srha2" id="rha2" href="article.html"><h1 class="srecentheader2" id="recentheader2"><span class="date">@Html.DisplayFor(modelItem => item.Date)</span><br />@Html.DisplayFor(modelItem => item.Header)</h1></a>

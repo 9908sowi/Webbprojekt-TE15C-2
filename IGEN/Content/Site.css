@@ -534,6 +534,7 @@ hr {
 #articlepic, #articlepic-about {
     position: absolute;
     width: 800px;
+    height:449.219px;
     top: 155px;
     left: calc((100vw - 960px) / 2 + 50px);
     z-index: -1;
@@ -731,7 +732,11 @@ hr {
 }
 
 #email {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+#password {
+    margin-bottom:10px;
 }
 
 #logintop {
@@ -1103,4 +1108,21 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .editform {
     width:400px;
     background-color:green;
+}
+
+#loginfail-email, #loginfail-password, #loginfail-email-first {
+    position: absolute;
+    width:400px;
+    color: red;
+    left: 291px;
+    top:245px;
+}
+
+#loginfail-password {
+    top:275px;
+}
+
+#loginfail-email-first {
+    top:210px;
+    left:275px;
 }
