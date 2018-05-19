@@ -1,0 +1,30 @@
+﻿@model IEnumerable<IGEN.Models.Article>
+
+<h1 id="justposted">Just posted</h1>
+<hr id="cutcards">
+<div id="recent">
+    <div id="vr"></div>
+    @{
+        var maxID = ViewData["LatestArticle"];
+        var count = 1;
+    }
+    @foreach (var item in Model.Reverse())
+    {
+        string rpa = "rpa" + count.ToString();
+        string rha = "rha" + count.ToString();
+        string recentpic = "recentpic" + count.ToString();
+        string recentheader = "recentheader" + count.ToString();
+
+        <a id="@rpa" href="@Url.Action("Details", "Articles", new { id = item.ID })"><img id="@recentpic" src="@item.BigPic" alt="card" /></a>
+        <a id="@rha" href="@Url.Action("Details", "Articles", new { id = item.ID })"><h1 id="@recentheader"><span class="date">@item.Date.Hour:@item.Date.Minute  -  @item.Date.Day/@item.Date.Month</span><br />@item.Header</h1></a>
+
+        if (count >= 6)
+        {
+            break;
+        }
+        else
+        {
+            count = count + 1;
+        }
+    }
+</div>

@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<IGEN.Models.HomeEdit>
 
 <div id="content">
-    @foreach (var item in Model) {<a id="mainpic" href="@Url.Action("Details", "Articles", new { id = item.FrontPic.ID })"><img id="pic1" src="@item.FrontPic.BigPic" alt="main headline" /></a>
-    <h1 id="head1"><a href="article.html">@Html.DisplayFor(modelItem => item.FrontPic.Header)</a></h1>}
+    @foreach (var item in Model)
+    {<a id="mainpic" href="@Url.Action("Details", "Articles", new { id = item.FrontPic.ID })"><img id="pic1" src="@item.FrontPic.BigPic" alt="main headline" /></a>
+        <h1 id="head1"><a href="article.html">@Html.DisplayFor(modelItem => item.FrontPic.Header)</a></h1>}
     <h1 id="mostread">Most read</h1>
     <a class="sidepic1" href="article.html"><hr id="hr1"><img class="sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" /><hr></a>
     <h1 class="sidehead1"><a class="sidehead1" href="article.html">Fortnite is the most played game right now</a></h1>
@@ -37,47 +38,26 @@
 <p id="showless">Show less <i class="fa fa-angle-double-up" aria-hidden="true"></i></p>
 <hr id="cutmain">
 <div id="cards">
-    @foreach (var item in Model) {<a id="cpa1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><img id="cardpic1" src="@item.CardPic1.BigPic" alt="card" /></a>
-    <a id="cha1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><h1 id="cardheader1">@Html.DisplayFor(modelItem => item.CardPic1.Header)</h1></a>}
-    @foreach (var item in Model) {<a id="cpa2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><img id="cardpic2" src="@item.CardPic2.BigPic" alt="card" /></a>
-    <a id="cha2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><h1 id="cardheader2">@Html.DisplayFor(modelItem => item.CardPic2.Header)</h1></a>}
-    @foreach (var item in Model) {<a id="cpa3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><img id="cardpic3" src="@item.CardPic3.BigPic" alt="card" /></a>
-    <a id="cha3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><h1 id="cardheader3">@Html.DisplayFor(modelItem => item.CardPic3.Header)</h1></a>}
-    @foreach (var item in Model) {<a id="cpa4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><img id="cardpic4" src="@item.CardPic4.BigPic" alt="card" /></a>
-    <a id="cha4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><h1 id="cardheader4">@Html.DisplayFor(modelItem => item.CardPic4.Header)</h1></a>}
-    @foreach (var item in Model) {<a id="cpa5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><img id="cardpic5" src="@item.CardPic5.BigPic" alt="card" /></a>
-    <a id="cha5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><h1 id="cardheader5">@Html.DisplayFor(modelItem => item.CardPic5.Header)</h1></a>}
-    @foreach (var item in Model) {<a id="cpa6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><img id="cardpic6" src="@item.CardPic6.BigPic" alt="card" /></a>
-    <a id="cha6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><h1 id="cardheader6">@Html.DisplayFor(modelItem => item.CardPic6.Header)</h1></a>}
-</div>
-<h1 id="justposted">Just posted</h1>
-<hr id="cutcards">
-<div id="recent">
-    <div id="vr"></div>
-    @{
-        var maxID = ViewData["LatestArticle"];
-        var count = 1;
-    }
     @foreach (var item in Model)
-    {
-        string rpa = "rpa" + count.ToString();
-        string rha = "rha" + count.ToString();
-        string recentpic = "recentpic" + count.ToString();
-        string recentheader = "recentheader" + count.ToString();
-
-        <a id="@rpa" href="article.html"><img id="@recentpic" src="@item.CardPic1.BigPic" alt="card" /></a>
-        <a id="@rha" href="article.html"><h1 id="@recentheader"><span class="date">@maxID</span><br />How to beat Dark Souls on the hardest difficulty</h1></a>
-
-        if (count >= 6)
-        {
-            break;
-        }
-        else
-        {
-            count = count + 1;
-        }
-    }
-    </div>
+    {<a id="cpa1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><img id="cardpic1" src="@item.CardPic1.BigPic" alt="card" /></a>
+        <a id="cha1" href="@Url.Action("Details", "Articles", new { id = item.CardPic1.ID })"><h1 id="cardheader1">@Html.DisplayFor(modelItem => item.CardPic1.Header)</h1></a>}
+    @foreach (var item in Model)
+    {<a id="cpa2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><img id="cardpic2" src="@item.CardPic2.BigPic" alt="card" /></a>
+        <a id="cha2" href="@Url.Action("Details", "Articles", new { id = item.CardPic2.ID })"><h1 id="cardheader2">@Html.DisplayFor(modelItem => item.CardPic2.Header)</h1></a>}
+    @foreach (var item in Model)
+    {<a id="cpa3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><img id="cardpic3" src="@item.CardPic3.BigPic" alt="card" /></a>
+        <a id="cha3" href="@Url.Action("Details", "Articles", new { id = item.CardPic3.ID })"><h1 id="cardheader3">@Html.DisplayFor(modelItem => item.CardPic3.Header)</h1></a>}
+    @foreach (var item in Model)
+    {<a id="cpa4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><img id="cardpic4" src="@item.CardPic4.BigPic" alt="card" /></a>
+        <a id="cha4" href="@Url.Action("Details", "Articles", new { id = item.CardPic4.ID })"><h1 id="cardheader4">@Html.DisplayFor(modelItem => item.CardPic4.Header)</h1></a>}
+    @foreach (var item in Model)
+    {<a id="cpa5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><img id="cardpic5" src="@item.CardPic5.BigPic" alt="card" /></a>
+        <a id="cha5" href="@Url.Action("Details", "Articles", new { id = item.CardPic5.ID })"><h1 id="cardheader5">@Html.DisplayFor(modelItem => item.CardPic5.Header)</h1></a>}
+    @foreach (var item in Model)
+    {<a id="cpa6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><img id="cardpic6" src="@item.CardPic6.BigPic" alt="card" /></a>
+        <a id="cha6" href="@Url.Action("Details", "Articles", new { id = item.CardPic6.ID })"><h1 id="cardheader6">@Html.DisplayFor(modelItem => item.CardPic6.Header)</h1></a>}
+</div>
+@{Html.RenderAction("JustPosted");}
 <div id="socialmedia">
     <p>Visit us on social media</p>
     <a id="spa1" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>

@@ -18,8 +18,6 @@ namespace IGEN.Controllers
         public ActionResult Index()
         {
             var homeEdit = db.HomeEdit.Include(h => h.CardPic1).Include(h => h.CardPic2).Include(h => h.CardPic3).Include(h => h.CardPic4).Include(h => h.CardPic5).Include(h => h.CardPic6).Include(h => h.FrontPic);
-            int maxID = db.Article.Max(p => p.ID);
-            ViewData["LatestArticle"] = maxID;
             return View(homeEdit.ToList());
         }
 
@@ -153,6 +151,14 @@ namespace IGEN.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public PartialViewResult JustPosted()
+        {
+            int maxID = db.Article.Max(p => p.ID);
+            ViewData["LatestArticle"] = maxID;
+            var justPosted = db.Article;
+            return PartialView("JustPosted", justPosted.ToList());
         }
     }
 }

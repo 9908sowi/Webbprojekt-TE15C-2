@@ -293,6 +293,7 @@
     <Content Include="Views\HomeEdits\Details.cshtml" />
     <Content Include="Views\HomeEdits\Edit.cshtml" />
     <Content Include="Views\HomeEdits\Index.cshtml" />
+    <Content Include="Views\HomeEdits\JustPosted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

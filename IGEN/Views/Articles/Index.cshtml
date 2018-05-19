@@ -2,6 +2,8 @@
 
 @{ var count = 1; }
 
+<p id="noresults">No results found</p>
+
 @foreach (var item in Model)
 {
     string rpa = "rpa" + count.ToString();
@@ -12,7 +14,7 @@
     string srecentpic = "srecentpic" + count.ToString();
     string recentheader = "recentheader" + count.ToString();
     string srecentheader = "srecentheader" + count.ToString();
-    if (ViewBag.SearchText == "")
+    if (ViewBag.SearchText == "" || @ViewBag.SearchText == null)
     {
         <p id="topsearchtext">Showing all articles</p>
     }

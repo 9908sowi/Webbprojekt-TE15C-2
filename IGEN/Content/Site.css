@@ -165,6 +165,7 @@ h1 {
 
 #pic1 {
     width: 650px;
+    height: 365px;
     grid-column: 1 / span 6;
 }
 
@@ -270,6 +271,7 @@ hr {
 
 #cardpic1, #cpa1, #cardpic2, #cpa2, #cardpic3, #cpa3, #cardpic4, #cpa4, #cardpic5, #cpa5, #cardpic6, #cpa6 {
     width: 280px;
+    height:171px;
     grid-column: 1 / span 1;
     grid-row: 1 / span 4;
     margin-top: 3px;
@@ -366,7 +368,11 @@ hr {
 #recentpic1, #rpa1, #recentpic2, #rpa2, #recentpic3, #rpa3, #recentpic4, #rpa4, #recentpic5, #rpa5, #recentpic6, #rpa6 {
     position: absolute;
     width: 140px;
-    padding-right: 20px;
+    padding-right: 280px;
+}
+
+#recentpic1, #recentpic2, #recentpic3, #recentpic4, #recentpic5, #recentpic6 {
+    height: 85.313px;
 }
 
 #recentpic1, #rpa1 {
@@ -647,13 +653,19 @@ hr {
     font-weight: bold;
 }
 
-#topsearchtext {
+#topsearchtext, #noresults {
     position: absolute;
     font-family: "Open Sans",sans-serif;
     left: calc((100vw - 960px) / 2 - 33px);
     font-weight: bold;
     font-size: 30px;
     top: 125px;
+    background-color:#FFFFFF;
+    z-index:3;
+}
+
+#noresults {
+    z-index:2;
 }
 
 .srecentpic1, .srpa1 {
@@ -1003,7 +1015,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     position: absolute;
     top: 870px;
     left: calc((100vw - 960px) / 2 + 730px);
-    z-index: 3;
+    z-index: 0;
 }
 
     #showless:hover {
