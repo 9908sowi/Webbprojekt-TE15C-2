@@ -7,36 +7,7 @@
     {<a id="mainpic" href="@Url.Action("Details", "Articles", new { id = item.FrontPic.ID })"><img id="pic1" src="@item.FrontPic.BigPic" alt="main headline" /></a>
         <h1 id="head1"><a href="article.html">@Html.DisplayFor(modelItem => item.FrontPic.Header)</a></h1>}
     <h1 id="mostread">Most read</h1>
-    <a class="sidepic1" href="article.html"><hr id="hr1"><img class="sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" /><hr></a>
-    <h1 class="sidehead1"><a class="sidehead1" href="article.html">Fortnite is the most played game right now</a></h1>
-    <a class="sidepic2" href="article.html"><img class="sidepic2" src="https://cdn.mos.cms.futurecdn.net/L2mvXrVt3psHHM7fM2LWaD-650-80.jpg" alt="most read 1" /><hr></a>
-    <h1 class="sidehead2"><a class="sidehead2" href="article.html">The GTX 1060 is only $199 for a limited time</a></h1>
-    <a class="sidepic3" href="article.html"><img class="sidepic3" src="https://cdn.mos.cms.futurecdn.net/mW35CbYGMypUDBpG3dcJgU-320-80.jpg" alt="most read 1" /><hr></a>
-    <h1 class="sidehead3"><a class="sidehead3" href="article.html">Radical Heights is the hottest new battle royale</a></h1>
-    <a id="showmore"><p>Show more<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
-</div>
-<div id="showmorecontent">
-    <img class="showmorepic1 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
-    <h1 class="showmorehead1">Fortnite is the most played game right now</h1>
-    <hr>
-    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
-    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
-    <hr>
-    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
-    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
-    <hr>
-    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
-    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
-    <hr>
-    <img class="showmorepic2 sidepic1" src="https://cdn.mos.cms.futurecdn.net/UzN3i83teDGM3RvvtDyuxf-650-80.jpg" alt="most read 1" />
-    <h1 class="showmorehead2">Fortnite is the most played game right now</h1>
-    <hr>
-    <a href="article.html"><div id="mostreadbg4"></div></a>
-    <a href="article.html"><div id="mostreadbg5"></div></a>
-    <a href="article.html"><div id="mostreadbg6"></div></a>
-    <a href="article.html"><div id="mostreadbg7"></div></a>
-    <a href="article.html"><div id="mostreadbg8"></div></a>
-</div>
+    @{Html.RenderAction("MostRead");}
 <p id="showless">Show less <i class="fa fa-angle-double-up" aria-hidden="true"></i></p>
 <hr id="cutmain">
 <div id="cards">

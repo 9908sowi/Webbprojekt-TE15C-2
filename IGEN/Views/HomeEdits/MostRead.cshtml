@@ -1,0 +1,36 @@
+﻿@model IEnumerable<IGEN.Models.Article>
+
+@{ 
+    var sorted = Model.OrderByDescending(s => s.Visits);
+}
+
+@foreach(var item in sorted){<a class="sidepic1" href="@Url.Action("Details", "Articles", new { id = item.ID })"><hr id="hr1"><img class="sidepic1" src="@item.BigPic" alt="most read 1" /><hr></a>
+<h1 class="sidehead1"><a class="sidehead1" href="@Url.Action("Details", "Articles", new { id = item.ID })">@item.Header</a></h1> break;}
+@foreach(var item in sorted.Skip(1)){<a class="sidepic2" href="@Url.Action("Details", "Articles", new { id = item.ID })"><img class="sidepic2" src="@item.BigPic" alt="most read 2" /><hr></a>
+<h1 class="sidehead2"><a class="sidehead2" href="@Url.Action("Details", "Articles", new { id = item.ID })">@item.Header</a></h1> break;}
+@foreach(var item in sorted.Skip(2)){<a class="sidepic3" href="@Url.Action("Details", "Articles", new { id = item.ID })"><img class="sidepic3" src="@item.BigPic" alt="most read 3" /><hr></a>
+<h1 class="sidehead3"><a class="sidehead3" href="@Url.Action("Details", "Articles", new { id = item.ID })">@item.Header</a></h1> break;}
+<a id="showmore"><p>Show more<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
+</div>
+<div id="showmorecontent">
+    @foreach(var item in sorted.Skip(3)){<img class="showmorepic1 sidepic1" src="@item.BigPic" alt="most read 4" />
+    <h1 class="showmorehead1">@item.Header</h1> break;}
+    <hr>
+    @foreach(var item in sorted.Skip(4)){<img class="showmorepic2 sidepic1" src="@item.BigPic" alt="most read 5" />
+    <h1 class="showmorehead2">@item.Header</h1> break;}
+    <hr>
+    @foreach(var item in sorted.Skip(5)){<img class="showmorepic2 sidepic1" src="@item.BigPic" alt="most read 6" />
+    <h1 class="showmorehead2">@item.Header</h1> break;}
+    <hr>
+    @foreach(var item in sorted.Skip(6)){<img class="showmorepic2 sidepic1" src="@item.BigPic" alt="most read 7" />
+    <h1 class="showmorehead2">@item.Header</h1> break;}
+    <hr>
+    @foreach(var item in sorted.Skip(7)){<img class="showmorepic2 sidepic1" src="@item.BigPic" alt="most read 8" />
+    <h1 class="showmorehead2">@item.Header</h1> break;}
+    <hr>
+    @foreach(var item in sorted.Skip(3)){<a href="@Url.Action("Details", "Articles", new { id = item.ID })"><div id="mostreadbg4"></div></a> break;}
+    @foreach(var item in sorted.Skip(4)){<a href="@Url.Action("Details", "Articles", new { id = item.ID })"><div id="mostreadbg5"></div></a> break;}
+    @foreach(var item in sorted.Skip(5)){<a href="@Url.Action("Details", "Articles", new { id = item.ID })"><div id="mostreadbg6"></div></a> break;}
+    @foreach(var item in sorted.Skip(6)){<a href="@Url.Action("Details", "Articles", new { id = item.ID })"><div id="mostreadbg7"></div></a> break;}
+    @foreach(var item in sorted.Skip(7)){<a href="@Url.Action("Details", "Articles", new { id = item.ID })"><div id="mostreadbg8"></div></a> break;}
+</div>

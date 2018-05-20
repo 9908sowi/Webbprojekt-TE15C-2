@@ -24,5 +24,6 @@ namespace IGEN.Models
         public int? GameID { get; set; }
         public virtual Game Game { get; set; }
         public virtual ICollection<HomeEdit> HomeEdits { get; set; }
+        public int? Visits { get; set; }
     }
 }

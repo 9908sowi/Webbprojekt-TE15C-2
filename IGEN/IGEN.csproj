@@ -198,11 +198,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805171945425_FuckOffuckingfuckfuck.cs" />
-    <Compile Include="Migrations\201805171945425_FuckOffuckingfuckfuck.Designer.cs">
-      <DependentUpon>201805171945425_FuckOffuckingfuckfuck.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ContentDbContext.cs" />
@@ -294,6 +289,7 @@
     <Content Include="Views\HomeEdits\Edit.cshtml" />
     <Content Include="Views\HomeEdits\Index.cshtml" />
     <Content Include="Views\HomeEdits\JustPosted.cshtml" />
+    <Content Include="Views\HomeEdits\MostRead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,11 +306,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805171945425_FuckOffuckingfuckfuck.resx">
-      <DependentUpon>201805171945425_FuckOffuckingfuckfuck.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

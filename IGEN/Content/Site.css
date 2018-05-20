@@ -171,6 +171,7 @@ h1 {
 
 .sidepic1 {
     width: 100px;
+    height:56.25px;
     grid-column: 22 / span 3;
     grid-row: 6 / span 1;
     padding-right: 180px;
@@ -179,6 +180,7 @@ h1 {
 
 .sidepic2 {
     width: 100px;
+    height: 56.25px;
     grid-column: 22 / span 3;
     grid-row: 10 / span 1;
     padding-right: 180px;
@@ -187,6 +189,7 @@ h1 {
 
 .sidepic3 {
     width: 100px;
+    height: 56.25px;
     grid-column: 22 / span 3;
     grid-row: 14 / span 1;
     padding-right: 180px;
@@ -1002,6 +1005,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .showmorehead1, .showmorehead2 {
     font-size: 16px;
     width: 155px;
+    height:44px;
     margin-left: 126px;
     margin-top: -55px;
     pointer-events: none;

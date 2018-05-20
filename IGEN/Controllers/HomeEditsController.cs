@@ -160,5 +160,11 @@ namespace IGEN.Controllers
             var justPosted = db.Article;
             return PartialView("JustPosted", justPosted.ToList());
         }
+
+        public PartialViewResult MostRead()
+        {
+            var mostRead = db.Article;
+            return PartialView("MostRead", mostRead.ToList());
+        }
     }
 }
