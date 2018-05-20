@@ -53,6 +53,7 @@ namespace IGEN.Controllers
             return View(article);
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // GET: Articles/Create
         public ActionResult Create()
         {
@@ -60,6 +61,7 @@ namespace IGEN.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // POST: Articles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -78,6 +80,7 @@ namespace IGEN.Controllers
             return View(article);
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // GET: Articles/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -94,6 +97,7 @@ namespace IGEN.Controllers
             return View(article);
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // POST: Articles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -111,6 +115,7 @@ namespace IGEN.Controllers
             return View(article);
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // GET: Articles/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -126,6 +131,7 @@ namespace IGEN.Controllers
             return View(article);
         }
 
+        [Authorize(Roles = "Creator, Admin")]
         // POST: Articles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -134,7 +140,7 @@ namespace IGEN.Controllers
             Article article = db.Article.Find(id);
             db.Article.Remove(article);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "HomeEdits");
         }
 
         protected override void Dispose(bool disposing)

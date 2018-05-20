@@ -10,6 +10,7 @@ using IGEN.Models;
 
 namespace IGEN.Controllers
 {
+    [Authorize(Roles = "Creator, Admin")]
     public class GamesController : Controller
     {
         private ContentDbContext db = new ContentDbContext();
@@ -52,7 +53,7 @@ namespace IGEN.Controllers
             {
                 db.Game.Add(game);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Articles");
             }
 
             return View(game);

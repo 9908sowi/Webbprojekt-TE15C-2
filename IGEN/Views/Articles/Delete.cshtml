@@ -1,72 +1,32 @@
 ﻿@model IGEN.Models.Article
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "| Delete \"" + Model.Header + "\"";
 }
 
-<h2>Delete</h2>
+<p id="delete1">Delete "@Model.Header"</p>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Article</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Game.Title)
-        </dt>
+<p id="delete2"><span class="bold">Are you sure?</span></p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Game.Title)
-        </dd>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input id="submit" class="submit-create submit-delete" type="submit" value="Delete" />
+}
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Header)
-        </dt>
+<div id="canceldelete">@Html.ActionLink("Cancel", "Edit", new { id = Model.ID })</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Header)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BigPic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BigPic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
 </div>

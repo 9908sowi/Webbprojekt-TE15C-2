@@ -21,6 +21,7 @@ namespace IGEN.Controllers
             return View(homeEdit.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: HomeEdits/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,6 +37,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: HomeEdits/Create
         public ActionResult Create()
         {
@@ -49,6 +51,7 @@ namespace IGEN.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: HomeEdits/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -73,6 +76,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: HomeEdits/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -95,6 +99,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: HomeEdits/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -118,6 +123,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: HomeEdits/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -133,6 +139,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: HomeEdits/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

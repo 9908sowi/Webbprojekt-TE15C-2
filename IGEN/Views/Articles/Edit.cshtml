@@ -1,5 +1,9 @@
 ﻿@model IGEN.Models.Article
 
+@{
+    ViewBag.Title = "| Edit \"" + Model.Header + "\"";
+}
+
 <hr id="articlehr-login">
 <div id="socialmedia-login">
     <p>Visit us on social media</p>
@@ -15,40 +19,49 @@
     <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
 </div>
 
-<h2>Edit</h2>
+<h2 id="topcreate">Edit "@Model.Header"</h2>
 
 @using (Html.BeginForm(new { @class = "editform" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Article</h4>
-    <hr />
+    <hr id="createtophr" />
     @Html.ValidationSummary(true, "")
     @Html.HiddenFor(model => model.ID)
-    @Html.LabelFor(model => model.Header)
-    @Html.EditorFor(model => model.Header)
-    @Html.ValidationMessageFor(model => model.Header, "")
-    @Html.LabelFor(model => model.BigPic)
-    @Html.EditorFor(model => model.BigPic)
-    @Html.ValidationMessageFor(model => model.BigPic, "")
-    @Html.LabelFor(model => model.Date)
-    @Html.EditorFor(model => model.Date)
-    @Html.ValidationMessageFor(model => model.Date, "")
-    @Html.LabelFor(model => model.Author)
-    @Html.EditorFor(model => model.Author)
-    @Html.ValidationMessageFor(model => model.Author)
-    @Html.LabelFor(model => model.Text)
-    @Html.EditorFor(model => model.Text)
-    @Html.ValidationMessageFor(model => model.Text, "")
-    @Html.LabelFor(model => model.GameID, "GameID")
-    @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.GameID, "")
-    <input type="submit" value="Save" class="btn btn-default" />
+    @Html.LabelFor(model => model.Header, new { id = "create-header-label" })
+    @Html.EditorFor(model => model.Header, new { htmlAttributes = new { id = "create-header" } })
+    @Html.ValidationMessageFor(model => model.Header, "", new { id = "create-header-val" })
+    <br />
+    @Html.LabelFor(model => model.BigPic, new { id = "create-bigpic-label" })
+    @Html.EditorFor(model => model.BigPic, new { htmlAttributes = new { placeholder = "Must be LINK to picture. Preferred 16:9 format.", id = "create-bigpic" } })
+    @Html.ValidationMessageFor(model => model.BigPic, "", new { id = "create-bigpic-val" })
+    <br />
+    @Html.LabelFor(model => model.Date, new { id = "create-date-label" })
+    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { placeholder = "YYYY/MM/DD HH:MM", id = "create-date" } })
+    @Html.ValidationMessageFor(model => model.Date, "", new { id = "create-date-val" })
+    <br />
+    @Html.LabelFor(model => model.Author, new { id = "create-author-label" })
+    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { id = "create-author" } })
+    @Html.ValidationMessageFor(model => model.Author, "", new { id = "create-author-val" })
+    <br />
+    @Html.LabelFor(model => model.Text, new { id = "create-text-label" })
+    @Html.EditorFor(model => model.Text, new { htmlAttributes = new { id = "create-text" } })
+    @Html.ValidationMessageFor(model => model.Text, "", new { id = "create-text-val" })
+    <br />
+    @Html.LabelFor(model => model.GameID, "Game", new { id = "create-game-label" })
+    @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control", id = "create-game" })
+    @Html.ValidationMessageFor(model => model.GameID, "", new { id = "create-game-val" })
+    <br />
+    <input id="submit" class="submit-create" type="submit" value="Save" />
 }
 
+<div id="createnewgame">
+    @Html.ActionLink("Create new", "Create", "Games")
+</div>
 
-@Html.ActionLink("Back to List", "Index")
+<div id="deletearticle">
+    @Html.ActionLink("Delete article", "Delete", new { id = Model.ID })
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
