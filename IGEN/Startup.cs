@@ -38,6 +38,12 @@ namespace IGEN
                 role.Name = "Visitor";
                 roleManager.Create(role);
             }
+            if (!roleManager.RoleExists("Subscriber"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Subscriber";
+                roleManager.Create(role);
+            }
             if (!roleManager.RoleExists("Creator"))
             {
                 var role = new IdentityRole();

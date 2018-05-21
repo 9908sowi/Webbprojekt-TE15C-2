@@ -14,7 +14,7 @@
     <div id="container">
         <a id="a1" href="@Url.Action("Index", "HomeEdits")"><img id="logo" src="@Url.Content("~/Content/images/IGEN_red.png")" alt="logo" /></a>
         <a id="a2" href="@Url.Action("Index", "HomeEdits")"><p><i class="fa fa-home" aria-hidden="true"></i>Home</p></a>
-        <a id="a3" href="magazine.html"><p><i class="fa fa-book" aria-hidden="true"></i>The Magazine</p></a>
+        <a id="a3" href="@Url.Action("Magazine", "HomeEdits")"><p><i class="fa fa-book" aria-hidden="true"></i>The Magazine</p></a>
         <a id="a33" href="#"><p>More<i class="fa fa-angle-double-down" aria-hidden="true"></i></p></a>
         <a id="a4" href="#"><p><i id="topsearch" class="fa fa-search" aria-hidden="true"></i>Search</p></a>
         @if (!Request.IsAuthenticated)
@@ -29,8 +29,8 @@
         </div>
     }
     <div id="more">
-        <a id="m1" href="about.html"><p>About Us</p></a>
-        <a id="m2" href="contact.html"><p>Contact</p></a>
+        <a id="m1" href="@Url.Action("About", "HomeEdits")"><p>About Us</p></a>
+        <a id="m2" href="@Url.Action("Contact", "HomeEdits")"><p>Contact</p></a>
         <a id="m3" href="press.html"><p>Press</p></a>
     </div>
 

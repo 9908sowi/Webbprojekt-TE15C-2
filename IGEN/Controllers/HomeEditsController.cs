@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using IGEN.Models;
 
 namespace IGEN.Controllers
@@ -123,7 +124,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Subscriber")]
         // GET: HomeEdits/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -172,6 +173,30 @@ namespace IGEN.Controllers
         {
             var mostRead = db.Article;
             return PartialView("MostRead", mostRead.ToList());
+        }
+
+        public ActionResult Magazine()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Visitor")]
+        public ActionResult Subscribe()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Visitor")]
+        public ActionResult Payment()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Visitor")]
+        public ActionResult ThankYou()
+        {
+            Roles.AddUserToRole(User.Identity.Name, "Subscriber");
+            return View();
         }
     }
 }

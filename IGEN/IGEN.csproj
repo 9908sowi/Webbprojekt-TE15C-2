@@ -290,6 +290,10 @@
     <Content Include="Views\HomeEdits\Index.cshtml" />
     <Content Include="Views\HomeEdits\JustPosted.cshtml" />
     <Content Include="Views\HomeEdits\MostRead.cshtml" />
+    <Content Include="Views\HomeEdits\Magazine.cshtml" />
+    <Content Include="Views\HomeEdits\Subscribe.cshtml" />
+    <Content Include="Views\HomeEdits\Payment.cshtml" />
+    <Content Include="Views\HomeEdits\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

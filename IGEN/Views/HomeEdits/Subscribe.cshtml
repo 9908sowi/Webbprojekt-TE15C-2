@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "| Bu a subscription to IGEN Magazine";
+}
+
+<h1 id="logintop">Buy a subscription to IGEN Magazine</h1>
+<hr id="logintophr">
+<form id="loginform" action="@Url.Action("Payment", "HomeEdits")">
+    <label>Choose duration: </label>
+    <label id="label-subscription" for="password-subscription">Home address: </label>
+    <input id="password-subscription" type="text" required />
+    <select id="sortby-subscription" name="cars">
+        <option value="1month">1 month</option>
+        <option value="3months">3 months</option>
+        <option value="6months">6 months</option>
+        <option value="12months">12 months</option>
+    </select>
+    <input id="submit-subscription" type="submit" value="Pay now     " />
+</form>
+<i id="loginicon-buy" class="fa fa-shopping-cart" aria-hidden="true"></i>
+<p id="registertext">A subscription gives<br />access to locked articles.</p>
+<p id="forgotpasswordtext">No account?<br /><a href="register.html">Register here.</a></p>
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
+</div>
