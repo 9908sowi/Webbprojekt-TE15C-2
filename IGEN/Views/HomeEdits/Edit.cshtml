@@ -1,88 +1,61 @@
 ﻿@model IGEN.Models.HomeEdit
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "| Edit homepage";
 }
 
-<h2>Edit</h2>
+<h2 id="topcreate">Edit homepage</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>HomeEdit</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FrontPicID, "FrontPicID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("FrontPicID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.FrontPicID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic1ID, "CardPic1ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic1ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic1ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic2ID, "CardPic2ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic2ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic2ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic3ID, "CardPic3ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic3ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic3ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic4ID, "CardPic4ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic4ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic4ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic5ID, "CardPic5ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic5ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic5ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CardPic6ID, "CardPic6ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CardPic6ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CardPic6ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+    <hr id="createtophr" />
+    @Html.ValidationSummary(true, "")
+    @Html.HiddenFor(model => model.ID)
+    @Html.LabelFor(model => model.FrontPicID, "FrontPicID", new { id = "create-header-label", @class = "homepage1" })
+    @Html.DropDownList("FrontPicID", null, htmlAttributes: new { @class = "form-control", id = "create-header" })
+    @Html.ValidationMessageFor(model => model.FrontPicID, "", new { id = "create-header-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic1ID, "CardPic1ID", new { id = "create-bigpic-label", @class = "homepage2" })
+    @Html.DropDownList("CardPic1ID", null, htmlAttributes: new { @class = "form-control", id = "create-bigpic" })
+    @Html.ValidationMessageFor(model => model.CardPic1ID, "", new { id = "create-bigpic-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic2ID, "CardPic2ID", new { id = "create-date-label", @class = "homepage2" })
+    @Html.DropDownList("CardPic2ID", null, htmlAttributes: new { @class = "form-control", id = "create-date" })
+    @Html.ValidationMessageFor(model => model.CardPic2ID, "", new { id = "create-date-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic3ID, "CardPic3ID", new { id = "create-author-label", @class = "homepage2" })
+    @Html.DropDownList("CardPic3ID", null, htmlAttributes: new { @class = "form-control", id = "create-author" })
+    @Html.ValidationMessageFor(model => model.CardPic3ID, "", new { id = "create-author-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic4ID, "CardPic4ID", new { id = "create-text-label", @class = "homepage2" })
+    @Html.DropDownList("CardPic4ID", null, htmlAttributes: new { @class = "form-control biginput", id = "create-text" })
+    @Html.ValidationMessageFor(model => model.CardPic4ID, "", new { id = "create-text-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic5ID, "CardPic5ID", new { id = "create-game-label", @class = "homepage3" })
+    @Html.DropDownList("CardPic5ID", null, htmlAttributes: new { @class = "form-control cardpic5", id = "create-game" })
+    @Html.ValidationMessageFor(model => model.CardPic5ID, "", new { id = "create-game-val" })
+    <br />
+    @Html.LabelFor(model => model.CardPic6ID, "CardPic6ID", new { id = "create-cardpic-label", @class = "homepage4" })
+    @Html.DropDownList("CardPic6ID", null, htmlAttributes: new { @class = "form-control", id = "create-cardpic" })
+    @Html.ValidationMessageFor(model => model.CardPic6ID, "", new { id = "create-cardpic-val" })
+    <input id="submit" class="submit-create" type="submit" value="Save" />
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<hr id="articlehr-login">
+<div id="socialmedia-login">
+    <p>Visit us on social media</p>
+    <a id="spa1-login" href="https://facebook.com"><img src="@Url.Content("~/Content/images/facebook.png")" alt="facebook" /></a>
+    <a id="spa2-login" href="https://twitter.com"><img src="@Url.Content("~/Content/images/twitter.png")" alt="twitter" /></a>
+    <a id="spa3-login" href="https://instagram.com"><img src="@Url.Content("~/Content/images/instagram.png")" alt="instagram" /></a>
+    <a id="spa4-login" href="https://youtube.com"><img src="@Url.Content("~/Content/images/youtube.png")" alt="youtube" /></a>
+</div>
+<div id="footer-login">
+    <img id="footerlogo" src="@Url.Content("~/Content/images/IGEN_red_text.png")" alt="logo" />
+    <p id="fp1"><a href="@Url.Action("Index", "HomeEdits")">Home</a> <span class="whitedot">•</span> <a href="tos.html">Terms of Use</a> <span class="whitedot">•</span> <a href="contact.html">Contact Us</a></p>
+    <p id="fp2"><a href="about.html">About Us</a> <span class="whitedot">•</span> <a href="copyright.html">Copyright</a> <span class="whitedot">•</span> <a href="tip.html">Tip Us</a></p>
+    <p id="fp3">© 2018 - Ingenious Gamer & Electronics News</p>
 </div>
 
 @section Scripts {

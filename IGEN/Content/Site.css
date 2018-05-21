@@ -1131,7 +1131,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     left:275px;
 }
 
-#create-header, #create-bigpic, #create-date, #create-author, #create-text, #create-game {
+#create-header, #create-bigpic, #create-date, #create-author, #create-text, #create-game, #create-cardpic {
     position: absolute;
     font-family: "Archivo Narrow", sans-serif;
     left: calc((100vw - 960px) / 2 + 380px);
@@ -1139,7 +1139,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     width:300px;
 }
 
-#create-header-label, #create-bigpic-label, #create-date-label, #create-author-label, #create-text-label, #create-game-label {
+#create-header-label, #create-bigpic-label, #create-date-label, #create-author-label, #create-text-label, #create-game-label, #create-cardpic-label {
     position: absolute;
     font-family: "Archivo Narrow", sans-serif;
     left: calc((100vw - 960px) / 2 + 300px);
@@ -1200,6 +1200,10 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 #create-game-label {
     top:525px;
+}
+
+.cardpic5 {
+    top:450px !important;
 }
 
 #topcreate {
@@ -1286,4 +1290,33 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 .create-date-label-game {
     left: calc((100vw - 960px) / 2 + 270px) !important;
+}
+
+.homepage1 {
+    left: calc((100vw - 960px) / 2 + 270px) !important;
+}
+
+#create-cardpic-label {
+    top:500px !important;
+    margin-top:-5px;
+}
+
+.homepage2, .homepage3, .homepage4 {
+    left: calc((100vw - 960px) / 2 + 262px) !important;
+}
+
+.homepage3 {
+    top:450px !important;
+}
+
+.biginput {
+    height:25px !important;
+}
+
+.homepage1, .homepage2, .homepage3 {
+    margin-top: -5px;
+}
+
+#create-cardpic {
+    top:500px !important;
 }
