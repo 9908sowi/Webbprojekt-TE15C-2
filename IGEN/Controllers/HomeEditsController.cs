@@ -18,6 +18,47 @@ namespace IGEN.Controllers
         // GET: HomeEdits
         public ActionResult Index()
         {
+            bool gameExists = db.Game.Any(game => game.ID == game.ID);
+            bool articleExists = db.Article.Any(article => article.ID == article.ID);
+            bool homeExists = db.HomeEdit.Any(home => home.ID == home.ID);
+
+            if (!gameExists)
+            {
+                Game newgame = new Game();
+                newgame.ID = 1;
+                newgame.Title = "Sample";
+                newgame.CoverArt = "http://www.mobygames.com/images/covers/l/367150-battlefield-1-windows-front-cover.png";
+                newgame.Developer = "Sample";
+                db.Game.Add(newgame);
+                db.SaveChanges();
+            }
+            if (!articleExists)
+            {
+                Article newarticle = new Article();
+                newarticle.ID = 1;
+                newarticle.Header = "Sample";
+                newarticle.BigPic = "https://cdn.mos.cms.futurecdn.net/eZ6pqBFQtymNTiksWQCJWo-650-80.jpg";
+                newarticle.Date = DateTime.Now;
+                newarticle.Author = "Sample";
+                newarticle.Text = "Lorem ipsum.";
+                newarticle.GameID = 1;
+                db.Article.Add(newarticle);
+                db.SaveChanges();
+            }
+            if (!homeExists)
+            {
+                HomeEdit newhome = new HomeEdit();
+                newhome.ID = 1;
+                newhome.FrontPicID = 1;
+                newhome.CardPic1ID = 1;
+                newhome.CardPic2ID = 1;
+                newhome.CardPic3ID = 1;
+                newhome.CardPic4ID = 1;
+                newhome.CardPic5ID = 1;
+                newhome.CardPic6ID = 1;
+                db.HomeEdit.Add(newhome);
+                db.SaveChanges();
+            }
             var homeEdit = db.HomeEdit.Include(h => h.CardPic1).Include(h => h.CardPic2).Include(h => h.CardPic3).Include(h => h.CardPic4).Include(h => h.CardPic5).Include(h => h.CardPic6).Include(h => h.FrontPic);
             return View(homeEdit.ToList());
         }
