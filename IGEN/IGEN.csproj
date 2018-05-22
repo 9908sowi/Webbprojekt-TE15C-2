@@ -239,6 +239,24 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\IGEN_Mobil\about.html" />
+    <Content Include="Views\IGEN_Mobil\css\style %28Konfliktkopia för PillarOfAutumn 2018-05-17%29.css" />
+    <Content Include="Views\IGEN_Mobil\css\style.css" />
+    <Content Include="Views\IGEN_Mobil\images\Banner_AD_1.png" />
+    <Content Include="Views\IGEN_Mobil\images\facebook.png" />
+    <Content Include="Views\IGEN_Mobil\images\IGEN.png" />
+    <Content Include="Views\IGEN_Mobil\images\IGEN_red.png" />
+    <Content Include="Views\IGEN_Mobil\images\IGEN_red_text.png" />
+    <Content Include="Views\IGEN_Mobil\images\instagram.png" />
+    <Content Include="Views\IGEN_Mobil\images\magazine.png" />
+    <Content Include="Views\IGEN_Mobil\images\tabicon.png" />
+    <Content Include="Views\IGEN_Mobil\images\twitter.png" />
+    <Content Include="Views\IGEN_Mobil\images\youtube.png" />
+    <Content Include="Views\IGEN_Mobil\Index.html" />
+    <Content Include="Views\IGEN_Mobil\js\script.js" />
+    <Content Include="Views\IGEN_Mobil\login.html" />
+    <Content Include="Views\IGEN_Mobil\magazine.html" />
+    <Content Include="Views\IGEN_Mobil\register.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
