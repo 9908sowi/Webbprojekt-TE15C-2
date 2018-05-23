@@ -196,4 +196,7 @@ $(document).ready(function() {
           event.preventDefault();
       }
   });
+
+  $("#restricted").fadeIn("slow");
+  setTimeout(function(){ $("#restricted").fadeOut("slow"); }, 5000);
 });

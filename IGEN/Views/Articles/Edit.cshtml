@@ -51,6 +51,9 @@
     @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control", id = "create-game" })
     @Html.ValidationMessageFor(model => model.GameID, "", new { id = "create-game-val" })
     <br />
+    <p id="locked">Locked article?</p>
+    @Html.CheckBox("IsLocked", false, new { @class = "lockedbox" })
+    <br />
     <input id="submit" class="submit-create" type="submit" value="Save" />
 }
 

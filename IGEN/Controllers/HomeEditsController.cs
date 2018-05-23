@@ -44,6 +44,7 @@ namespace IGEN.Controllers
                 newarticle.Author = "Sample";
                 newarticle.Text = "Lorem ipsum.";
                 newarticle.GameID = 1;
+                newarticle.IsLocked = false;
                 db.Article.Add(newarticle);
                 db.SaveChanges();
             }
@@ -223,26 +224,81 @@ namespace IGEN.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Visitor")]
-        public ActionResult Subscribe()
+        public ActionResult Subscribe(bool? loggedin)
         {
-            return View();
+            if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
+            {
+                return RedirectToAction("AlreadySubscribed");
+            }
+            else
+            {
+                if(loggedin == true)
+                {
+                    ViewBag.NoSub = true;
+                    return View();
+                }
+                else if(loggedin == null)
+                {
+                    if (User.IsInRole("Visitor"))
+                    {
+                        return View();
+                    }
+                    else
+                    {
+                        return RedirectToAction("Login", "Account", new { returnUrl = "/HomeEdits/Subscribe" });
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Account", new { returnUrl = "/HomeEdits/Subscribe", loggedin = false });
+                }
+            }
         }
 
-        [Authorize(Roles = "Visitor")] /*[Authorize(Roles = "Visitor, Subscriber")]*/
+        [Authorize]
         public ActionResult Payment()
         {
+            if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
+            {
+                return RedirectToAction("AlreadySubscribed");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [Authorize]
+        public ActionResult ThankYou()
+        {
+            if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
+            {
+                return RedirectToAction("AlreadySubscribed");
+            }
+            else
+            {
+                ApplicationDbContext context;
+                context = new ApplicationDbContext();
+                UserManager<ApplicationUser> userManager;
+                userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                userManager.AddToRole(User.Identity.GetUserId(), "Subscriber");
+                userManager.RemoveFromRole(User.Identity.GetUserId(), "Visitor");
+                return View();
+            }
+        }
+
+        public ActionResult AlreadySubscribed()
+        {
             return View();
         }
 
-        [Authorize(Roles = "Visitor")]
-        public ActionResult ThankYou()
+        public ActionResult About()
         {
-            ApplicationDbContext context;
-            context = new ApplicationDbContext();
-            UserManager<ApplicationUser> userManager;
-            userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            userManager.AddToRole(User.Identity.GetUserId(), "Subscriber");
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
             return View();
         }
     }

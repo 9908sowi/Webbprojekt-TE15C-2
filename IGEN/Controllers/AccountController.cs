@@ -55,10 +55,19 @@ namespace IGEN.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl, bool? loggedin)
         {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            if(loggedin == null)
+            {
+                ViewBag.ReturnUrl = returnUrl;
+                return View();
+            }
+            else
+            {
+                ViewBag.TryingToSubscribeButNotLoggedIn = true;
+                ViewBag.ReturnUrl = returnUrl;
+                return View();
+            }
         }
 
         //

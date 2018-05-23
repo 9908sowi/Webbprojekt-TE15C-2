@@ -1320,3 +1320,39 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 #create-cardpic {
     top:500px !important;
 }
+
+#restricted {
+    background-color: #FF3B21;
+    border: 2px solid #FF0000;
+    color: #FFFFFF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 7px;
+    border-radius: 10px;
+    width: 770px;
+    margin-left: calc((100vw - 960px) / 2 + 80px);
+    display:none;
+}
+
+.restricted2 {
+    width: 670px !important;
+    margin-left: calc((100vw - 960px) / 2 + 120px) !important;
+}
+
+#locked {
+    position: absolute;
+    font-size: 15px;
+    left: calc((100vw - 960px) / 2 + 520px) !important;
+    top:560px;
+}
+
+.lockedbox {
+    position: absolute;
+    left: calc((100vw - 960px) / 2 + 640px) !important;
+    top:588px;
+}
+
+#articlepic-about {
+    height:initial !important;
+}

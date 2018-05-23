@@ -1,21 +1,17 @@
-﻿@model IGEN.Models.Article
-
+﻿
 @{
-    ViewBag.Title = "| Delete \"" + Model.Header + "\"";
+    ViewBag.Title = "| Contact";
 }
 
-<p id="delete1">Delete "@Model.Header"</p>
-
-<p id="delete2"><span class="bold">Are you sure?</span></p>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <input id="submit" class="submit-create submit-delete" type="submit" value="Delete" />
-}
-
-<div id="canceldelete">@Html.ActionLink("Cancel", "Edit", new { id = Model.ID })</div>
-
+<h1 id="logintop">Contact information</h1>
+<hr id="logintophr">
+<p id="contactinformation"><span class="bold">Phone:</span> +46 420 13 37 69<br /><br /><span class="bold">Email:</span> igensupport@igen.com<br /><br /><span class="bold">Address:</span> 48th St. 11th Av. New York City, New York</p>
+<form id="sendfeedback">
+    <textarea placeholder="Send us some feedback!"></textarea>
+    <input id="sendfeedbacksubmit" type="button" value="Send" />
+</form>
+<p id="feedbacknotification"><i class="fa fa-check"></i></p>
+<p id="feedbacknotificationtext">Thank you for your feedback!</p>
 <hr id="articlehr-login">
 <div id="socialmedia-login">
     <p>Visit us on social media</p>

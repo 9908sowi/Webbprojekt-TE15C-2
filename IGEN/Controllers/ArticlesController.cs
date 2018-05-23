@@ -33,24 +33,58 @@ namespace IGEN.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Article article = db.Article.Find(id);
+
             if (article == null)
             {
                 return HttpNotFound();
             }
 
-            if (article.Visits == null)
+            if (article.IsLocked)
             {
-                article.Visits = 1;
-                db.SaveChanges();
+                if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
+                {
+                    if (article.Visits == null)
+                    {
+                        article.Visits = 1;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        article.Visits = article.Visits + 1;
+                        db.SaveChanges();
+                    }
+
+                    return View(article);
+                }
+                else
+                {
+                    if(User.IsInRole("Visitor"))
+                    {
+                        return RedirectToAction("Subscribe", "HomeEdits", new { loggedin = true });
+                    }
+                    else
+                    {
+                        return RedirectToAction("Subscribe", "HomeEdits", new { loggedin = false });
+                    }
+                }
             }
             else
             {
-                article.Visits = article.Visits + 1;
-                db.SaveChanges();
-            }
+                if (article.Visits == null)
+                {
+                    article.Visits = 1;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    article.Visits = article.Visits + 1;
+                    db.SaveChanges();
+                }
 
-            return View(article);
+                return View(article);
+            }
         }
 
         [Authorize(Roles = "Creator, Admin")]

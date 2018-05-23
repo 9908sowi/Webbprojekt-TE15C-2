@@ -1,21 +1,10 @@
-﻿@model IGEN.Models.Article
-
-@{
-    ViewBag.Title = "| Delete \"" + Model.Header + "\"";
+﻿@{
+    ViewBag.Title = "| Already subscribed";
 }
 
-<p id="delete1">Delete "@Model.Header"</p>
-
-<p id="delete2"><span class="bold">Are you sure?</span></p>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <input id="submit" class="submit-create submit-delete" type="submit" value="Delete" />
-}
-
-<div id="canceldelete">@Html.ActionLink("Cancel", "Edit", new { id = Model.ID })</div>
-
+<h1 id="logintop">You are already subscribed!</h1>
+<hr id="logintophr">
+<a id="thankyoutext" href="@Url.Action("Index", "HomeEdits")"><p>Click here to go back to the start page.</p></a>
 <hr id="articlehr-login">
 <div id="socialmedia-login">
     <p>Visit us on social media</p>

@@ -1,8 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "| Bu a subscription to IGEN Magazine";
+    ViewBag.Title = "| Buy a subscription to IGEN Magazine";
 }
 
+@{
+    if(ViewBag.NoSub == true)
+    {
+        <p id="restricted" class="restricted2"><i class="fa fa-ban"></i>This page is locked to subscribers only. Buy a subscription to access!</p>
+    }
+}
 <h1 id="logintop">Buy a subscription to IGEN Magazine</h1>
 <hr id="logintophr">
 <form id="loginform" action="@Url.Action("Payment", "HomeEdits")">
