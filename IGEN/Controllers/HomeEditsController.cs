@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using IGEN.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace IGEN.Controllers
 {
@@ -227,7 +229,7 @@ namespace IGEN.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Visitor")]
+        [Authorize(Roles = "Visitor")] /*[Authorize(Roles = "Visitor, Subscriber")]*/
         public ActionResult Payment()
         {
             return View();
@@ -236,7 +238,11 @@ namespace IGEN.Controllers
         [Authorize(Roles = "Visitor")]
         public ActionResult ThankYou()
         {
-            Roles.AddUserToRole(User.Identity.Name, "Subscriber");
+            ApplicationDbContext context;
+            context = new ApplicationDbContext();
+            UserManager<ApplicationUser> userManager;
+            userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            userManager.AddToRole(User.Identity.GetUserId(), "Subscriber");
             return View();
         }
     }
