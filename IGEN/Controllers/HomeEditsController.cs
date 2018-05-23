@@ -24,6 +24,7 @@ namespace IGEN.Controllers
             bool articleExists = db.Article.Any(article => article.ID == article.ID);
             bool homeExists = db.HomeEdit.Any(home => home.ID == home.ID);
 
+            /*The following creates a sample article first time starting the project, otherwise it will give an error since much of the content on the startpage depends on there actually existing articles (should be atleast 8 for most read part to show properly)*/
             if (!gameExists)
             {
                 Game newgame = new Game();
@@ -168,7 +169,7 @@ namespace IGEN.Controllers
             return View(homeEdit);
         }
 
-        [Authorize(Roles = "Subscriber")]
+        [Authorize(Roles = "Admin")]
         // GET: HomeEdits/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -209,12 +210,14 @@ namespace IGEN.Controllers
         {
             int maxID = db.Article.Max(p => p.ID);
             ViewData["LatestArticle"] = maxID;
+            /*Following sends the article db for use in the partial view. Must use partial view to use both HomeEdit and Article models for the startpage (but only Article is used here).*/
             var justPosted = db.Article;
             return PartialView("JustPosted", justPosted.ToList());
         }
 
         public PartialViewResult MostRead()
         {
+            /*Same as above.*/
             var mostRead = db.Article;
             return PartialView("MostRead", mostRead.ToList());
         }
@@ -226,12 +229,14 @@ namespace IGEN.Controllers
 
         public ActionResult Subscribe(bool? loggedin)
         {
+            /*Used so subscribed users aren't able to subscribe again.*/
             if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
             {
                 return RedirectToAction("AlreadySubscribed");
             }
             else
             {
+                /*Making sure we display correct information regarding locked articles after trying to access a locked article without being subscribed or logged in. Takes the loggedin bool from article controller.*/
                 if(loggedin == true)
                 {
                     ViewBag.NoSub = true;
@@ -239,6 +244,7 @@ namespace IGEN.Controllers
                 }
                 else if(loggedin == null)
                 {
+                    /*If not coming from locked article (trying to access it)*/
                     if (User.IsInRole("Visitor"))
                     {
                         return View();
@@ -277,6 +283,7 @@ namespace IGEN.Controllers
             }
             else
             {
+                /*Changing the role of the visitor user when payed.*/
                 ApplicationDbContext context;
                 context = new ApplicationDbContext();
                 UserManager<ApplicationUser> userManager;

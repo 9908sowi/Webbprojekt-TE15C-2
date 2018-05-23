@@ -8,6 +8,7 @@ namespace IGEN.Models
 {
     public class Game
     {
+        /*Basic game info class used in article pages (on the right hand side of article text). ICollection used to connect games to articles.*/
         public int ID { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]

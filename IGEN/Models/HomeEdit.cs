@@ -8,6 +8,7 @@ namespace IGEN.Models
 {
     public class HomeEdit
     {
+        /*Model for setting which articles should be shown on the start page (except most read and just posted part). Only admin access.*/
         public int ID { get; set; }
         public int? FrontPicID { get; set; }
         public virtual Article FrontPic { get; set; }

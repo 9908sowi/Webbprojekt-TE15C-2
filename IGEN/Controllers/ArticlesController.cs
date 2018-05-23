@@ -43,8 +43,10 @@ namespace IGEN.Controllers
 
             if (article.IsLocked)
             {
+                /*Make sure only subscriber gain access*/
                 if (User.IsInRole("Subscriber") || User.IsInRole("Admin") || User.IsInRole("Creator"))
                 {
+                    /*Adding visits to the specific article. Since you dont set the visits when creating new article, it becomes null. If never visited, it is null so set first time visiting to 1.*/
                     if (article.Visits == null)
                     {
                         article.Visits = 1;
@@ -60,6 +62,7 @@ namespace IGEN.Controllers
                 }
                 else
                 {
+                    /*Making sure we redirect properly back to where we should with the parameters we send to the controller, after we logged in.*/
                     if(User.IsInRole("Visitor"))
                     {
                         return RedirectToAction("Subscribe", "HomeEdits", new { loggedin = true });

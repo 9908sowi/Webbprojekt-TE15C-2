@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<IGEN.Models.Article>
 
 @{ 
+    /*Makes sure the model used later in foreach is actually sorted with articles with most visits coming first.*/
     var sorted = Model.OrderByDescending(s => s.Visits);
+
+    /*We skip records in db later in foreach to only read the record we want for each specific article to display. Breaks at end since we only want one record.*/
 }
 
 @foreach(var item in sorted){<a class="sidepic1" href="@Url.Action("Details", "Articles", new { id = item.ID })"><hr id="hr1"><img class="sidepic1" src="@item.BigPic" alt="most read 1" /><hr></a>

@@ -64,6 +64,7 @@ namespace IGEN.Controllers
             }
             else
             {
+                /*Displays the locked text if tried to access locked article. bool loggedin comes from the HomeEdit controller.*/
                 ViewBag.TryingToSubscribeButNotLoggedIn = true;
                 ViewBag.ReturnUrl = returnUrl;
                 return View();

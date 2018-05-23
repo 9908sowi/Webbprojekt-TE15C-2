@@ -10,6 +10,7 @@
     }
     @foreach (var item in Model.Reverse())
     {
+        /*Displays in reverse order since the most recently posted ends up last.*/
         string rpa = "rpa" + count.ToString();
         string rha = "rha" + count.ToString();
         string recentpic = "recentpic" + count.ToString();
@@ -24,6 +25,7 @@
         }
         else
         {
+            /*Shouldn't do more than 6 runs since only 6 articles displayed here*/
             count = count + 1;
         }
     }
