@@ -25,5 +25,6 @@ namespace IGEN.Models
         public virtual Game Game { get; set; }
         public virtual ICollection<HomeEdit> HomeEdits { get; set; }
         public int? Visits { get; set; }
+        public bool IsLocked { get; set; }
     }
 }

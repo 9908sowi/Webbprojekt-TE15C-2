@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <hr id="createtophr"/>
+    <hr id="createtophr" />
     @Html.ValidationSummary(true, "")
     @Html.LabelFor(model => model.Header, new { id = "create-header-label" })
     @Html.EditorFor(model => model.Header, new { htmlAttributes = new { id = "create-header" } })
@@ -35,6 +35,8 @@
     @Html.LabelFor(model => model.GameID, "Game", new { id = "create-game-label" })
     @Html.DropDownList("GameID", null, htmlAttributes: new { @class = "form-control", id = "create-game" })
     @Html.ValidationMessageFor(model => model.GameID, "", new { id = "create-game-val" })
+    <br />
+    @Html.CheckBox("IsLocked", false)
     <br />
     <input id="submit" class="submit-create" type="submit" value="Create" />
 }

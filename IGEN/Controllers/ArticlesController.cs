@@ -67,7 +67,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID,Visits")] Article article)
+        public ActionResult Create([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID,Visits,IsLocked")] Article article)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace IGEN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID,Visits")] Article article)
+        public ActionResult Edit([Bind(Include = "ID,Header,BigPic,Date,Author,Text,GameID,Visits,IsLocked")] Article article)
         {
             if (ModelState.IsValid)
             {
